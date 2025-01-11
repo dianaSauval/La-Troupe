@@ -12,12 +12,24 @@ import RotatingCardBack from "../Card/RotatingCard/RotatingCardBack";
 import MKTypography from "../MKTypography";
 
 // Images
-import bgFront from "../../assets/images/rotating-card-bg-front.jpeg";
-import bgBack from "../../assets/images/rotating-card-bg-back.jpeg";
+import bgBack from "../../assets/images/bg-coworking.jpeg";
 import tela from "../../assets/images/tela.jpg";
 import aro from "../../assets/images/aro.jpg";
+import { useState } from "react";
 
 function Information() {
+  const [flippedTela, setFlippedTela] = useState(false); // Estado para la tarjeta "Tela"
+  const [flippedAro, setFlippedAro] = useState(false); // Estado para la tarjeta "Trapecio y Aro"
+
+  // Función para manejar el clic y alternar la rotación
+  const handleCardClick = (card) => {
+    if (card === "tela") {
+      setFlippedTela(!flippedTela); // Alterna entre el frente y el reverso de la tarjeta "Tela"
+    } else if (card === "aro") {
+      setFlippedAro(!flippedAro); // Alterna entre el frente y el reverso de la tarjeta "Trapecio y Aro"
+    }
+  };
+
   return (
     <MKBox component="section" py={3} my={3} sx={{ backgroundColor: "#F5F5F5" }}>
       <MKTypography variant="h1" align="center" fontWeight="bold" mb={4} sx={{ color: "#FFC523" }}>
@@ -26,7 +38,10 @@ function Information() {
       <Container>
         <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto" }}>
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
-            <RotatingCard>
+            <RotatingCard
+              onClick={() => handleCardClick("tela")} // Clic para cambiar entre el frente y el reverso de "Tela"
+              flipped={flippedTela} // Estado para controlar el giro de la tarjeta "Tela"
+            >
               <RotatingCardFront
                 image={tela}
                 icon=""
@@ -38,6 +53,10 @@ function Information() {
                   </>
                 }
                 description="(+10 años)"
+                sx={{
+                  backgroundPosition: "center top", // Imagen más arriba dentro de la tarjeta
+                  transform: "translateY(-10%)", // Ajustamos aún más la imagen hacia arriba
+                }}
               >
                 {/* Aplicamos un fondo amarillo transparente al contenedor */}
                 <MKBox
@@ -54,7 +73,7 @@ function Information() {
                 />
               </RotatingCardFront>
               <RotatingCardBack
-                image={bgBack}
+                image={aro} // Imagen para la parte posterior
                 title="Información"
                 description="Lunes y miércoles 21hs"
                 action={{
@@ -65,8 +84,12 @@ function Information() {
               />
             </RotatingCard>
           </Grid>
+
           <Grid item xs={12} lg={4} sx={{ mx: "auto" }}>
-            <RotatingCard>
+            <RotatingCard
+              onClick={() => handleCardClick("aro")} // Clic para cambiar entre el frente y el reverso de "Trapecio y Aro"
+              flipped={flippedAro} // Estado para controlar el giro de la tarjeta "Trapecio y Aro"
+            >
               <RotatingCardFront
                 image={aro}
                 icon=""
@@ -78,6 +101,10 @@ function Information() {
                   </>
                 }
                 description=""
+                sx={{
+                  backgroundPosition: "center top", // Imagen más arriba dentro de la tarjeta
+                  transform: "translateY(-10%)", // Ajustamos aún más la imagen hacia arriba
+                }}
               >
                 {/* Aplicamos un fondo amarillo transparente al contenedor */}
                 <MKBox
@@ -112,4 +139,5 @@ function Information() {
 }
 
 export default Information;
+
 
