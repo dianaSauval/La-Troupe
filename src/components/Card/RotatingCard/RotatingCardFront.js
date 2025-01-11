@@ -26,6 +26,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
             rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.25)
           )}, url(${image})`,
         backgroundSize: "cover",
+        backgroundPosition: "center top",
         backfaceVisibility: "hidden",
         borderRadius: "8px", // Bordes redondeados en el fondo
         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Sombra suave

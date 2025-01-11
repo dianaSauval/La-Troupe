@@ -1,21 +1,4 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-import { useState } from "react";
-
-// prop-types is a library for typechecking of props.
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -26,12 +9,43 @@ import MKBox from "../../MKBox";
 
 function RotatingCard({ children }) {
   const [rotate, setRotate] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const rotate0 = () => setRotate(false);
-  const rotate180 = () => setRotate(true);
+  // Detectar si estamos en móvil
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768); // Ajusta el valor según tu necesidad
+    checkMobile();
+    window.addEventListener("resize", checkMobile); // Añadir evento para actualización en cambio de tamaño
+    return () => window.removeEventListener("resize", checkMobile); // Limpiar cuando el componente se desmonte
+  }, []);
+
+  // Función que cambia la rotación cuando se hace click en mobile
+  const handleClick = () => {
+    if (isMobile) {
+      setRotate(!rotate); // Cambia el estado de rotación en mobile
+    }
+  };
+
+  // Funciones para el hover en desktop
+  const rotate0 = () => {
+    if (!isMobile) {
+      setRotate(false); // Función de hover para desktop
+    }
+  };
+
+  const rotate180 = () => {
+    if (!isMobile) {
+      setRotate(true); // Función de hover para desktop
+    }
+  };
 
   return (
-    <MKBox sx={{ perspective: "50rem" }} onMouseEnter={rotate180} onMouseLeave={rotate0}>
+    <MKBox
+      sx={{ perspective: "50rem" }}
+      onClick={handleClick} // Activamos el click para mobile
+      onMouseEnter={!isMobile ? rotate180 : undefined} // Solo se activa el hover si no es mobile
+      onMouseLeave={!isMobile ? rotate0 : undefined} // Solo se activa el hover si no es mobile
+    >
       <Card
         sx={{
           backgroundColor: "transparent",
