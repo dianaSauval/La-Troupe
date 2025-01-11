@@ -26,7 +26,8 @@ function SpaceRental() {
           <Grid item xs={12} md={4}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // Controla la visibilidad
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Box
@@ -52,7 +53,8 @@ function SpaceRental() {
           <Grid item xs={12} md={4}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // Controla la visibilidad
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Box
@@ -78,7 +80,8 @@ function SpaceRental() {
           <Grid item xs={12} md={4}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // Controla la visibilidad
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Box
@@ -106,3 +109,4 @@ function SpaceRental() {
 }
 
 export default SpaceRental;
+
