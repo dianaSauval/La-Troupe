@@ -3,13 +3,20 @@ import React, { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
+import IconButton from "@mui/material/IconButton";
 // Material Kit 2 React components
 import MKBox from "../MKBox";
-import MKButton from "../MKButton";
 import MKTypography from "../MKTypography";
+// Componente del menú hamburguesa
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = (open) => {
+    setIsDrawerOpen(open);
+  };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -17,18 +24,18 @@ function NavBar() {
     if (element) {
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - offset;
-  
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
     }
+    setIsDrawerOpen(false); // Cierra el menú móvil después de seleccionar una sección
   };
-  
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -41,7 +48,7 @@ function NavBar() {
       position="fixed"
       top="0"
       width="100%"
-      zIndex="10"
+      zIndex="1100"
       sx={{
         transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
         backgroundColor: isScrolled ? "#FFC523" : "transparent",
@@ -69,17 +76,18 @@ function NavBar() {
           >
             La Troupe
           </MKTypography>
-          <MKButton
-            variant="outlined"
-            color={isScrolled ? "black" : "white"}
+          {/* Botón de menú hamburguesa */}
+          <IconButton
+            onClick={() => toggleDrawer(true)}
             sx={{
               display: { xs: "block", lg: "none" },
+              color: isScrolled ? "black" : "white",
               ml: "auto",
-              fontSize: isScrolled ? "0.875rem" : "1rem",
             }}
           >
-            <MKBox component="i" color={isScrolled ? "black" : "white"} className="fas fa-bars" />
-          </MKButton>
+            <MKBox component="i" className="fas fa-bars" />
+          </IconButton>
+          {/* Menú de navegación para pantallas grandes */}
           <MKBox
             component="ul"
             display={{ xs: "none", lg: "flex" }}
@@ -113,6 +121,12 @@ function NavBar() {
           </MKBox>
         </Grid>
       </Container>
+      {/* Componente del menú hamburguesa */}
+      <HamburgerMenu
+        isOpen={isDrawerOpen}
+        onClose={() => toggleDrawer(false)}
+        scrollToSection={scrollToSection}
+      />
     </MKBox>
   );
 }
