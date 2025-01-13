@@ -16,3 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Bloquea el scroll lateral */
+  width: 100vw; /* Asegura que el ancho sea igual al del viewport */
+}
+
+

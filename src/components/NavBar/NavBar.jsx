@@ -44,21 +44,22 @@ function NavBar() {
 
   return (
     <MKBox
-      component="nav"
-      position="fixed"
-      top="0"
-      width="100%"
-      zIndex="1100"
-      sx={{
-        transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
-        backgroundColor: isScrolled ? "#FFC523" : "transparent",
-        color: isScrolled ? "black" : "white",
-        boxShadow: isScrolled ? 4 : 0,
-        height: "55px",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+  component="nav"
+  position="fixed"
+  top="0"
+  width="100vw" // Asegura que ocupe solo el ancho del viewport
+  zIndex="1100"
+  sx={{
+    transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
+    backgroundColor: isScrolled ? "#FFC523" : "transparent",
+    color: isScrolled ? "black" : "white",
+    boxShadow: isScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
+    height: "55px",
+    display: "flex",
+    alignItems: "center",
+    overflow: "hidden", // Evita desbordamientos dentro del componente
+  }}
+>
       <Container>
         <Grid container flexDirection="row" alignItems="center" style={{ height: "100%" }}>
           <MKTypography
@@ -72,6 +73,7 @@ function NavBar() {
             sx={{
               fontSize: isScrolled ? "1.25rem" : "1.5rem",
               transition: "font-size 0.3s ease",
+              whiteSpace: "nowrap", // Evitar que el texto se corte
             }}
           >
             La Troupe
@@ -94,10 +96,14 @@ function NavBar() {
             p={0}
             my={0}
             mx="auto"
-            sx={{ listStyle: "none" }}
+            sx={{
+              listStyle: "none",
+              overflowX: "hidden", // Evitar desbordamiento horizontal
+              paddingInlineStart: 0,
+            }}
           >
             {["inicio", "escuela", "clases", "contacto"].map((section) => (
-              <MKBox component="li" key={section}>
+              <MKBox component="li" key={section} sx={{ marginInlineEnd: "1rem" }}>
                 <MKTypography
                   component={Link}
                   href={`#${section}`}
@@ -108,6 +114,7 @@ function NavBar() {
                   sx={{
                     fontSize: isScrolled ? "1rem" : "1.125rem",
                     transition: "font-size 0.3s ease",
+                    textDecoration: "none",
                   }}
                   onClick={(e) => {
                     e.preventDefault();
