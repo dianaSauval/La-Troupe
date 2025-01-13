@@ -8,6 +8,7 @@ import FormSimple from "./components/FormSimple/FormSimple";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import SpaceRental from "./components/SpaceRental/SpaceRental";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       >
         <FormSimple />
       </MKBox>
+      <Footer/>
     </MKBox>
   );
 }

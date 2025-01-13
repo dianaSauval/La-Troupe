@@ -13,41 +13,72 @@ import NavBar from "../NavBar/NavBar";
 
 function Header() {
   return (
-    <MKBox component="header" position="relative">
+    <MKBox component="header" position="relative" sx={{ overflowX: "hidden" }}>
       <NavBar />
       <MKBox
         id="inicio"
         display="flex"
         alignItems="center"
         minHeight="100vh"
-        sx={{
-          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.5),
-              rgba(gradients.dark.state, 0.5)
-            )}, url(${bgImage})`,
+        sx={(theme) => ({
+          backgroundImage: `
+            linear-gradient(
+              ${theme.functions.rgba(theme.palette.gradients.dark.main, 0.5)},
+              ${theme.functions.rgba(theme.palette.gradients.dark.state, 0.5)}
+            ), url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          pt: "55px",
-        }}
+          paddingTop: "55px",
+        })}
       >
         <Container>
-          <Grid container item xs={12} md={7} lg={6} flexDirection="column" justifyContent="center">
+          <Grid
+            container
+            item
+            xs={12}
+            md={7}
+            lg={6}
+            flexDirection="column"
+            justifyContent="center"
+            sx={{
+              padding: {
+                xs: "0 1rem", // Agrega espacio lateral en dispositivos pequeños
+                md: "0", // Sin padding adicional en dispositivos grandes
+              },
+            }}
+          >
             <MKTypography
               variant="h1"
               color="white"
               mb={3}
-              sx={({ breakpoints, typography: { size } }) => ({
+              sx={(theme) => ({
                 color: "#FFC523",
-                [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
+                fontSize: {
+                  xs: theme.typography.size["2xl"], // Ajusta para pantallas pequeñas
+                  sm: theme.typography.size["3xl"],
+                  md: theme.typography.size["4xl"],
                 },
               })}
             >
               La Troupe Multiespacio
             </MKTypography>
-            <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
-            En La Troupe, creemos que el circo es más que un espectáculo, es una forma de conectar, expresarse y desafiarse a uno mismo
+            <MKTypography
+              variant="body1"
+              color="white"
+              opacity={0.8}
+              sx={{
+                paddingRight: {
+                  xs: "0", // Sin padding en dispositivos pequeños
+                  md: "1.5rem",
+                },
+                marginRight: {
+                  xs: "0", // Sin margen en dispositivos pequeños
+                  md: "1.5rem",
+                },
+              }}
+            >
+              En La Troupe, creemos que el circo es más que un espectáculo, es una forma de conectar,
+              expresarse y desafiarse a uno mismo
             </MKTypography>
           </Grid>
         </Container>
@@ -57,4 +88,3 @@ function Header() {
 }
 
 export default Header;
-
