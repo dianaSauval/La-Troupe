@@ -1,0 +1,155 @@
+[
+    {
+      "front": {
+        "image": "../../assets/images/tela.jpg",
+        "title": "Tela\nTeens",
+        "description": "(+10 años)"
+      },
+      "back": {
+        "image": "../../assets/images/aro.jpg",
+        "title": "Información",
+        "description": "Lunes y miércoles 21hs",
+        "action": {
+          "type": "external",
+          "route": "https://duoserendipia.com.ar/",
+          "label": "start with header"
+        }
+      }
+    },
+    {
+      "front": {
+        "image": "../../assets/images/aro.jpg",
+        "title": "Trapecio\nAdultos",
+        "description": ""
+      },
+      "back": {
+        "image": "../../assets/images/bg-coworking.jpeg",
+        "title": "Información",
+        "description": "Lunes y miércoles 18hs",
+        "action": {
+          "type": "external",
+          "route": "https://duoserendipia.com.ar/",
+          "label": "start with header"
+        }
+      }
+    },
+    {
+      "front": {
+        "image": "../../assets/images/aro.jpg",
+        "title": "Cintas",
+        "description": "(+ 16 años)"
+      },
+      "back": {
+        "image": "../../assets/images/bg-coworking.jpeg",
+        "title": "Información",
+        "description": "Lunes y miércoles 20hs a 21:30hs",
+        "action": {
+          "type": "external",
+          "route": "https://duoserendipia.com.ar/",
+          "label": "start with header"
+        }
+      }
+    },
+    {
+        "front": {
+          "image": "../../assets/images/aro.jpg",
+          "title": "Tela",
+          "description": "(+ 16 años)"
+        },
+        "back": {
+          "image": "../../assets/images/bg-coworking.jpeg",
+          "title": "Información",
+          "description": "Martes y Jueves 18hs a 20hs",
+          "action": {
+            "type": "external",
+            "route": "https://duoserendipia.com.ar/",
+            "label": "start with header"
+          }
+        }
+      },
+      {
+          "front": {
+            "image": "../../assets/images/aro.jpg",
+            "title": "Circo Infantil",
+            "description": "(+ 6 años)"
+          },
+          "back": {
+            "image": "../../assets/images/bg-coworking.jpeg",
+            "title": "Información",
+            "description": "Martes y Jueves 18hs a 19:30hs",
+            "action": {
+              "type": "external",
+              "route": "https://duoserendipia.com.ar/",
+              "label": "start with header"
+            }
+          }
+        },
+        {
+            "front": {
+              "image": "../../assets/images/aro.jpg",
+              "title": "Trapecio fijo y dance",
+              "description": ""
+            },
+            "back": {
+              "image": "../../assets/images/bg-coworking.jpeg",
+              "title": "Información",
+              "description": "Martes y Jueves 18hs a 20hs",
+              "action": {
+                "type": "external",
+                "route": "https://duoserendipia.com.ar/",
+                "label": "start with header"
+              }
+            }
+          },
+          {
+              "front": {
+                "image": "../../assets/images/aro.jpg",
+                "title": "Tela Principiantes",
+                "description": "(+ 16 años)"
+              },
+              "back": {
+                "image": "../../assets/images/bg-coworking.jpeg",
+                "title": "Información",
+                "description": "Viernes 18hs a 20hs",
+                "action": {
+                  "type": "external",
+                  "route": "https://duoserendipia.com.ar/",
+                  "label": "start with header"
+                }
+              }
+            },
+            {
+                "front": {
+                  "image": "../../assets/images/aro.jpg",
+                  "title": "Trape Teens",
+                  "description": "(+ 10 años)"
+                },
+                "back": {
+                  "image": "../../assets/images/bg-coworking.jpeg",
+                  "title": "Información",
+                  "description": "Viernes 18hs a 20hs",
+                  "action": {
+                    "type": "external",
+                    "route": "https://duoserendipia.com.ar/",
+                    "label": "start with header"
+                  }
+                }
+              },
+              {
+                  "front": {
+                    "image": "../../assets/images/aro.jpg",
+                    "title": "Entrenamiento libre",
+                    "description": "(+ 10 años)"
+                  },
+                  "back": {
+                    "image": "../../assets/images/bg-coworking.jpeg",
+                    "title": "Información",
+                    "description": "Horarios a consultar",
+                    "action": {
+                      "type": "external",
+                      "route": "https://duoserendipia.com.ar/",
+                      "label": "start with header"
+                    }
+                  }
+                }
+  ]

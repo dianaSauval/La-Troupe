@@ -9,6 +9,7 @@ import MKBox from "../MKBox";
 import MKTypography from "../MKTypography";
 // Componente del menú hamburguesa
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
+import logo from "../../assets/images/logo3.png";
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +52,7 @@ function NavBar() {
   zIndex="1100"
   sx={{
     transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
-    backgroundColor: isScrolled ? "#FFC523" : "transparent",
+    backgroundColor: isScrolled ? "#FFCE00" : "transparent",
     color: isScrolled ? "black" : "white",
     boxShadow: isScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
     height: "55px",
@@ -62,22 +63,27 @@ function NavBar() {
 >
       <Container>
         <Grid container flexDirection="row" alignItems="center" style={{ height: "100%" }}>
-          <MKTypography
+        <MKBox
             component={Link}
             href="#"
-            variant="button"
-            color={isScrolled ? "black" : "white"}
-            fontWeight="regular"
-            py={0.8125}
-            mr={2}
             sx={{
-              fontSize: isScrolled ? "1.25rem" : "1.5rem",
-              transition: "font-size 0.3s ease",
-              whiteSpace: "nowrap", // Evitar que el texto se corte
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100%",
+              textDecoration: "none",
             }}
           >
-            La Troupe
-          </MKTypography>
+            <MKBox
+              component="img"
+              src={logo} // Cambia esta ruta si el logo está en otro lugar
+              alt="Logo"
+              sx={{
+                height: isScrolled ? "35px" : "45px", // Ajusta el tamaño dinámicamente
+                transition: "height 0.3s ease",
+              }}
+            />
+          </MKBox>
           {/* Botón de menú hamburguesa */}
           <IconButton
             onClick={() => toggleDrawer(true)}
@@ -98,7 +104,7 @@ function NavBar() {
             mx="auto"
             sx={{
               listStyle: "none",
-              overflowX: "hidden", // Evitar desbordamiento horizontal
+              overflowX: "visible", // Evitar desbordamiento horizontal
               paddingInlineStart: 0,
             }}
           >

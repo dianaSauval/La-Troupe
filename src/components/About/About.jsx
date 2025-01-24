@@ -9,7 +9,7 @@ import MKTypography from "../MKTypography";
 // Librería para animaciones
 import { motion } from "framer-motion";
 
-import circusImage from "../../assets/images/bg-coworking.jpeg"; // Asegúrate de importar una imagen de circo.
+import circusImage from "../../assets/images/about.jpeg"; // Asegúrate de importar una imagen de circo.
 
 function About() {
   return (

@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import MKBox from "../MKBox";
 import MKTypography from "../MKTypography";
 // Images
-import bgImage from "../../assets/images/bg-coworking.jpeg";
+import bgImage from "../../assets/images/fotobanner.jpeg";
 
 // Components
 import NavBar from "../NavBar/NavBar";

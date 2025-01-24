@@ -5,6 +5,13 @@ html {
   scroll-behavior: smooth;
 }
 
+ul {
+  list-style: disc; /* Cambiar a none */
+}
+li {
+  list-style: inherit; /* Cambiar a none */
+}
+
 
 .App-logo {
   height: 40vmin;
