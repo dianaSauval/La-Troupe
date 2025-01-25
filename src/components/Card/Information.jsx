@@ -7,40 +7,49 @@ import RotatingCard from "../Card/RotatingCard";
 import RotatingCardFront from "../Card/RotatingCard/RotatingCardFront";
 import RotatingCardBack from "../Card/RotatingCard/RotatingCardBack";
 import cardsData from "../../assets/data/cardsData.json";
+import { Padding } from "@mui/icons-material";
 
 function Information() {
   return (
     <MKBox component="section" py={3} my={3} sx={{ backgroundColor: "#F5F5F5" }}>
-      <MKTypography variant="h1" align="center" fontWeight="bold" mb={4} sx={{ color: "#FFC523" }}>
-        Nuestras Clases
-      </MKTypography>
-      <Container>
-        <Grid container item xs={11} spacing={3} alignItems="center" sx={{ mx: "auto" }}>
-          {cardsData.map((card, index) => (
-            <Grid item xs={12} lg={4} key={index} sx={{ mx: "auto" }}>
-              <RotatingCard flipped={false}>
-                <RotatingCardFront
-                  image={card.front.image}
-                  icon=""
-                  title={card.front.title}
-                  description={card.front.description}
-                  sx={{
-                    backgroundPosition: "center top",
-                  }}
-                />
-                <RotatingCardBack
-                  image={card.back.image}
-                  title={card.back.title}
-                  description={card.back.description}
-                  action={card.back.action}
-                />
-              </RotatingCard>
-            </Grid>
-          ))}
+  <MKTypography variant="h1" align="center" fontWeight="bold" mb={4} sx={{ color: "#FFC523", padding:"5px" }}>
+    Nuestras Clases
+  </MKTypography>
+  <Container maxWidth="lg" sx={{ px: 3 }}>
+    <Grid container spacing={3} justifyContent="center" alignItems="center">
+      {cardsData.map((card, index) => (
+        <Grid 
+          item 
+          xs={12}   // 1 tarjeta en pantallas muy pequeñas
+          sm={6}    // 2 tarjetas en pantallas pequeñas
+          md={4}    // 3 tarjetas en pantallas medianas
+          lg={3}  // 5 tarjetas en pantallas grandes
+          key={index}
+        >
+          <RotatingCard flipped={false}>
+            <RotatingCardFront
+              image={card.front.image}
+              icon=""
+              title={card.front.title}
+              description={card.front.description}
+              sx={{
+                backgroundPosition: "center top",
+              }}
+            />
+            <RotatingCardBack
+              image={card.back.image}
+              title={card.back.title}
+              description={card.back.description}
+              action={card.back.action}
+            />
+          </RotatingCard>
         </Grid>
-      </Container>
-    </MKBox>
+      ))}
+    </Grid>
+  </Container>
+</MKBox>
   );
 }
 
 export default Information;
+

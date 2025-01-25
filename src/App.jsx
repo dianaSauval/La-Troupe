@@ -9,22 +9,27 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import SpaceRental from "./components/SpaceRental/SpaceRental";
 import Footer from "./components/Footer/Footer";
+import { Margin, PaddingOutlined, PaddingSharp, PaddingTwoTone } from "@mui/icons-material";
 
 function App() {
   return (
     <MKBox>
       <Header />
       <MKBox id="escuela" sx={{ backgroundColor: "#261A23", color: "#FFC523" }}>
-        <About/>
+        <About />
       </MKBox>
-      <MKBox id="clases" sx={{
-        backgroundColor: "#F5F5F5",
-    paddingTop: "5px", paddingBottom:"15px" // Ajusta según la altura de tu navbar
-  }}>
-        <Information/>
+      <MKBox
+        id="clases"
+        sx={{
+          backgroundColor: "#F5F5F5",
+          paddingTop: "5px",
+          paddingBottom: "15px",
+        }}
+      >
+        <Information />
       </MKBox>
       <MKBox id="rental" sx={{ backgroundColor: "#261A23", color: "#FFC523" }}>
-        <SpaceRental/>
+        <SpaceRental />
       </MKBox>
       <MKBox
         id="contacto"
@@ -37,7 +42,7 @@ function App() {
       >
         <FormSimple />
       </MKBox>
-      <Footer/>
+      <Footer />
     </MKBox>
   );
 }

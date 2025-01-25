@@ -16,17 +16,17 @@ function RotatingCardFront({ color, image, icon, title, description }) {
       alignContent="center"
       borderRadius="lg"
       width="100%"
-      height="350px"
+      height="250px"
       position="relative"
       zIndex={2}
       sx={{
         backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
           `${linearGradient(
             rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.55),
-            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.25)
+            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.15)
           )}, url(${image})`,
         backgroundSize: "cover",
-        backgroundPosition: "center top",
+        backgroundPosition: "center",
         backfaceVisibility: "hidden",
         borderRadius: "8px", // Bordes redondeados en el fondo
         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Sombra suave
@@ -44,7 +44,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
           borderRadius: "8px",
         }}
       />
-      <MKBox py={12} px={3} textAlign="center" lineHeight={1} position="relative" zIndex={3}>
+      <MKBox py={4} px={3} textAlign="center" lineHeight={1} position="relative" zIndex={3}>
         {icon && (
           <MKTypography variant="h2" color="white" my={2}>
             {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
