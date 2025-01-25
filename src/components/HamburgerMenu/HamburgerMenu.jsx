@@ -91,7 +91,7 @@ function HamburgerMenu({ isOpen, onClose, scrollToSection }) {
             margin: "1rem 0",
           }}
         />
-        {["escuela", "clases", "contacto"].map((section) => (
+        {["escuela", "clases", "alquiler", "contacto"].map((section) => (
           <MKTypography
             key={section}
             component={Link}
