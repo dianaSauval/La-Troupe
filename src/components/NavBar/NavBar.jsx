@@ -108,7 +108,7 @@ function NavBar() {
               paddingInlineStart: 0,
             }}
           >
-            {["inicio", "escuela", "clases", "contacto"].map((section) => (
+            {["inicio", "escuela", "clases", "alquiler", "contacto"].map((section) => (
               <MKBox component="li" key={section} sx={{ marginInlineEnd: "1rem" }}>
                 <MKTypography
                   component={Link}

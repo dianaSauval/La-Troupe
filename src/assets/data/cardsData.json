@@ -1,12 +1,12 @@
 [
     {
       "front": {
-        "image": "../../assets/images/tela.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/tela_zwvzb9.jpg",
         "title": "Tela\nTeens",
         "description": "(+10 años)"
       },
       "back": {
-        "image": "../../assets/images/aro.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
         "title": "Información",
         "description": "Lunes y miércoles 21hs",
         "action": {
@@ -18,12 +18,12 @@
     },
     {
       "front": {
-        "image": "../../assets/images/aro.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
         "title": "Trapecio\nAdultos",
         "description": ""
       },
       "back": {
-        "image": "../../assets/images/bg-coworking.jpeg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
         "title": "Información",
         "description": "Lunes y miércoles 18hs",
         "action": {
@@ -35,12 +35,12 @@
     },
     {
       "front": {
-        "image": "../../assets/images/aro.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
         "title": "Cintas",
         "description": "(+ 16 años)"
       },
       "back": {
-        "image": "../../assets/images/bg-coworking.jpeg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
         "title": "Información",
         "description": "Lunes y miércoles 20hs a 21:30hs",
         "action": {
@@ -52,12 +52,12 @@
     },
     {
         "front": {
-          "image": "../../assets/images/aro.jpg",
+          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737759127/La%20Troupe/dance-2139804_1280_kaoz8r.jpg",
           "title": "Tela",
           "description": "(+ 16 años)"
         },
         "back": {
-          "image": "../../assets/images/bg-coworking.jpeg",
+          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
           "title": "Información",
           "description": "Martes y Jueves 18hs a 20hs",
           "action": {
@@ -69,12 +69,12 @@
       },
       {
           "front": {
-            "image": "../../assets/images/aro.jpg",
+            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
             "title": "Circo Infantil",
             "description": "(+ 6 años)"
           },
           "back": {
-            "image": "../../assets/images/bg-coworking.jpeg",
+            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
             "title": "Información",
             "description": "Martes y Jueves 18hs a 19:30hs",
             "action": {
@@ -86,12 +86,12 @@
         },
         {
             "front": {
-              "image": "../../assets/images/aro.jpg",
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
               "title": "Trapecio fijo y dance",
               "description": ""
             },
             "back": {
-              "image": "../../assets/images/bg-coworking.jpeg",
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
               "title": "Información",
               "description": "Martes y Jueves 18hs a 20hs",
               "action": {
@@ -103,12 +103,12 @@
           },
           {
               "front": {
-                "image": "../../assets/images/aro.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
                 "title": "Tela Principiantes",
                 "description": "(+ 16 años)"
               },
               "back": {
-                "image": "../../assets/images/bg-coworking.jpeg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
                 "title": "Información",
                 "description": "Viernes 18hs a 20hs",
                 "action": {
@@ -120,12 +120,12 @@
             },
             {
                 "front": {
-                  "image": "../../assets/images/aro.jpg",
+                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737759127/La%20Troupe/dance-2139804_1280_kaoz8r.jpg",
                   "title": "Trape Teens",
                   "description": "(+ 10 años)"
                 },
                 "back": {
-                  "image": "../../assets/images/bg-coworking.jpeg",
+                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
                   "title": "Información",
                   "description": "Viernes 18hs a 20hs",
                   "action": {
@@ -137,12 +137,12 @@
               },
               {
                   "front": {
-                    "image": "../../assets/images/aro.jpg",
+                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
                     "title": "Entrenamiento libre",
                     "description": "(+ 10 años)"
                   },
                   "back": {
-                    "image": "../../assets/images/bg-coworking.jpeg",
+                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
                     "title": "Información",
                     "description": "Horarios a consultar",
                     "action": {
