@@ -117,8 +117,8 @@ function SpaceRental() {
       </Container>
 
       {selectedSala && (
-        <ModalComponent open={open} onClose={handleClose} title={selectedSala.name}>
-          <ImageCarousel images={selectedSala.images} />
+        <ModalComponent open={open} onClose={handleClose} sala={selectedSala}>
+          <ImageCarousel images={selectedSala.images} description={selectedSala.description}/>
         </ModalComponent>
       )}
     </Box>

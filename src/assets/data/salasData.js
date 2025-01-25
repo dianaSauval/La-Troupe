@@ -11,7 +11,7 @@ const salas = [
       "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737762069/La%20Troupe/sala1_3_ib4gth.jpg",
       "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737762070/La%20Troupe/sala1_4_wwmehx.jpg",
       "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737762071/La%20Troupe/sala1_5_zlmrqz.jpg"
-    ],
+    ],    
   },
   {
     id: 2,

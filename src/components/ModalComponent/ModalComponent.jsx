@@ -1,8 +1,9 @@
 import React from "react";
 import { Modal, Box, Typography, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
-function ModalComponent({ open, onClose, title, children }) {
+function ModalComponent({ open, onClose, sala }) {
   return (
     <Modal
       open={open}
@@ -17,14 +18,13 @@ function ModalComponent({ open, onClose, title, children }) {
           left: "50%",
           transform: "translate(-50%, -50%)",
           bgcolor: "background.paper",
-          borderRadius: "16px", // Más redondeado
+          borderRadius: "16px",
           boxShadow: 24,
-          width: "80%",
-          height: "85%", // Ocupa casi toda la pantalla
-          overflow: "hidden", // Asegura que el contenido extra no salga
+          width: { xs: "90%", sm: "80%", md: "70%" },
+          maxHeight: "90%",
           display: "flex",
           flexDirection: "column",
-          p: 3,
+          p: 2,
           outline: "none",
         }}
       >
@@ -34,7 +34,7 @@ function ModalComponent({ open, onClose, title, children }) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            borderBottom: "1px solid #e0e0e0", // Línea sutil para separar el header
+            borderBottom: "1px solid #e0e0e0",
             pb: 2,
           }}
         >
@@ -44,23 +44,25 @@ function ModalComponent({ open, onClose, title, children }) {
             component="h2"
             sx={{ fontWeight: "bold" }}
           >
-            {title}
+            {sala.name}
           </Typography>
           <IconButton onClick={onClose} sx={{ color: "#666" }}>
             <CloseIcon />
           </IconButton>
         </Box>
 
-        {/* Contenido del modal */}
+        {/* Contenido */}
         <Box
           sx={{
-            flex: 1, // Hace que el contenido ocupe el espacio restante
-            overflowY: "auto", // Scroll para contenido largo
+            flex: 1,
             mt: 2,
-            px: 2,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            overflowY: "auto",
           }}
         >
-          {children}
+          <ImageCarousel images={sala.images} description={sala.description} />
         </Box>
       </Box>
     </Modal>
@@ -68,3 +70,4 @@ function ModalComponent({ open, onClose, title, children }) {
 }
 
 export default ModalComponent;
+
