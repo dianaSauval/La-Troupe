@@ -42,7 +42,7 @@
       "back": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979913/La%20Troupe/telaPrincipiantes_oknyot.jpg",
         "title": "Información",
-        "description": "Viernes 20hs",
+        "description": "Viernes 18hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
