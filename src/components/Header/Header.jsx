@@ -13,13 +13,13 @@ import NavBar from "../NavBar/NavBar";
 
 function Header() {
   return (
-    <MKBox component="header" position="relative" sx={{ overflowX: "hidden" }}>
+    <MKBox component="header" position="relative" sx={{ overflowX: "visible" }}>
       <NavBar />
       <MKBox
         id="inicio"
         display="flex"
         alignItems="center"
-        minHeight="100vh"
+        minHeight="110vh"
         sx={(theme) => ({
           backgroundImage: `
             linear-gradient(
@@ -29,9 +29,10 @@ function Header() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           paddingTop: "55px",
+          overflow: "visible",
         })}
       >
-        <Container>
+        <Container sx={{ overflow: "visible" }}>
           <Grid
             container
             item
@@ -41,10 +42,12 @@ function Header() {
             flexDirection="column"
             justifyContent="center"
             sx={{
+              overflow: "visible", // Evita cortar contenido
               padding: {
                 xs: "0 1rem", // Agrega espacio lateral en dispositivos pequeños
                 md: "0", // Sin padding adicional en dispositivos grandes
               },
+              
             }}
           >
             <MKTypography

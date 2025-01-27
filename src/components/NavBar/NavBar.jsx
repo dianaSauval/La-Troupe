@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import IconButton from "@mui/material/IconButton";
-// Material Kit 2 React components
 import MKBox from "../MKBox";
 import MKTypography from "../MKTypography";
-// Componente del menú hamburguesa
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import logo from "../../assets/images/logo3.png";
 
@@ -36,7 +33,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 50); // Cambia de estado cuando se haga scroll hacia abajo
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -45,57 +42,41 @@ function NavBar() {
 
   return (
     <MKBox
-  component="nav"
-  position="fixed"
-  top="0"
-  width="100vw" // Asegura que ocupe solo el ancho del viewport
-  zIndex="1100"
+      component="nav"
+      position="fixed"
+      top="0"
+      width="100vw"
+      zIndex="1100"
+      sx={{
+        transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
+        backgroundColor: isScrolled ? "#FFCE00" : "transparent",
+        color: isScrolled ? "black" : "white",
+        boxShadow: isScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
+        height: "55px",
+        display: "flex",
+        alignItems: "center",
+        overflow: "visible",
+      }}
+    >
+      {/* Logo fuera del navbar */}
+      <MKBox
+  component="img"
+  src={logo}
+  alt="Logo"
   sx={{
-    transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
-    backgroundColor: isScrolled ? "#FFCE00" : "transparent",
-    color: isScrolled ? "black" : "white",
-    boxShadow: isScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
-    height: "55px",
-    display: "flex",
-    alignItems: "center",
-    overflow: "hidden", // Evita desbordamientos dentro del componente
+    position: isScrolled ? "relative" : "absolute",
+    top: isScrolled ? "auto" : "20px",
+    left: isScrolled ? "10%" : "20%",
+    transform: isScrolled ? "none" : "translateX(-50%)",
+    height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
+    transition: "all 0.3s ease",
+    zIndex: 2000, // Asegura que esté sobre el navbar
+    maxWidth: { xs: "90%", sm: "80%", md: "none" }, // Ajusta el ancho para pantallas pequeñas
   }}
->
+/>
       <Container>
         <Grid container flexDirection="row" alignItems="center" style={{ height: "100%" }}>
-        <MKBox
-            component={Link}
-            href="#"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100%",
-              textDecoration: "none",
-            }}
-          >
-            <MKBox
-              component="img"
-              src={logo} // Cambia esta ruta si el logo está en otro lugar
-              alt="Logo"
-              sx={{
-                height: isScrolled ? "35px" : "45px", // Ajusta el tamaño dinámicamente
-                transition: "height 0.3s ease",
-              }}
-            />
-          </MKBox>
-          {/* Botón de menú hamburguesa */}
-          <IconButton
-            onClick={() => toggleDrawer(true)}
-            sx={{
-              display: { xs: "block", lg: "none" },
-              color: isScrolled ? "black" : "white",
-              ml: "auto",
-            }}
-          >
-            <MKBox component="i" className="fas fa-bars" />
-          </IconButton>
-          {/* Menú de navegación para pantallas grandes */}
+          {/* Menú de navegación */}
           <MKBox
             component="ul"
             display={{ xs: "none", lg: "flex" }}
@@ -104,7 +85,6 @@ function NavBar() {
             mx="auto"
             sx={{
               listStyle: "none",
-              overflowX: "visible", // Evitar desbordamiento horizontal
               paddingInlineStart: 0,
             }}
           >
@@ -132,6 +112,17 @@ function NavBar() {
               </MKBox>
             ))}
           </MKBox>
+          {/* Botón de menú hamburguesa */}
+          <IconButton
+            onClick={() => toggleDrawer(true)}
+            sx={{
+              display: { xs: "block", lg: "none" },
+              color: isScrolled ? "black" : "white",
+              ml: "auto",
+            }}
+          >
+            <MKBox component="i" className="fas fa-bars" />
+          </IconButton>
         </Grid>
       </Container>
       {/* Componente del menú hamburguesa */}

@@ -1,31 +1,14 @@
 [
     {
       "front": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/tela_zwvzb9.jpg",
-        "title": "Tela\nTeens",
-        "description": "(+10 años)"
-      },
-      "back": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-        "title": "Información",
-        "description": "Lunes y miércoles 21hs",
-        "action": {
-          "type": "external",
-          "route": "https://duoserendipia.com.ar/",
-          "label": "start with header"
-        }
-      }
-    },
-    {
-      "front": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-        "title": "Trapecio\nAdultos",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
+        "title": "Trape y Aro",
         "description": ""
       },
       "back": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
         "title": "Información",
-        "description": "Lunes y miércoles 18hs",
+        "description": "Sábados 10hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
@@ -35,14 +18,31 @@
     },
     {
       "front": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-        "title": "Cintas",
-        "description": "(+ 16 años)"
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979735/La%20Troupe/integral2_hkocqj.jpg",
+        "title": "Integral",
+        "description": "(tela, trape y aro)"
       },
       "back": {
-        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979735/La%20Troupe/integral2_hkocqj.jpg",
         "title": "Información",
-        "description": "Lunes y miércoles 20hs a 21:30hs",
+        "description": "Lunes y Miércoles 20hs",
+        "action": {
+          "type": "external",
+          "route": "https://duoserendipia.com.ar/",
+          "label": "start with header"
+        }
+      }
+    },
+    {
+      "front": {
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979913/La%20Troupe/telaPrincipiantes_oknyot.jpg",
+        "title": "Tela principiantes",
+        "description": ""
+      },
+      "back": {
+        "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979913/La%20Troupe/telaPrincipiantes_oknyot.jpg",
+        "title": "Información",
+        "description": "Viernes 20hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
@@ -52,14 +52,14 @@
     },
     {
         "front": {
-          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737759127/La%20Troupe/dance-2139804_1280_kaoz8r.jpg",
-          "title": "Tela",
-          "description": "(+ 16 años)"
+          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980017/La%20Troupe/cintas_rey31p.jpg",
+          "title": "Cintas",
+          "description": ""
         },
         "back": {
-          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980017/La%20Troupe/cintas_rey31p.jpg",
           "title": "Información",
-          "description": "Martes y Jueves 18hs a 20hs",
+          "description": "Lunes y Miércoles 18hs",
           "action": {
             "type": "external",
             "route": "https://duoserendipia.com.ar/",
@@ -69,14 +69,14 @@
       },
       {
           "front": {
-            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-            "title": "Circo Infantil",
-            "description": "(+ 6 años)"
+            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980082/La%20Troupe/Trapecio_o7ns5k.jpg",
+            "title": "Trapecio",
+            "description": ""
           },
           "back": {
-            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980082/La%20Troupe/Trapecio_o7ns5k.jpg",
             "title": "Información",
-            "description": "Martes y Jueves 18hs a 19:30hs",
+            "description": "Lunes y Miércoles 18hs",
             "action": {
               "type": "external",
               "route": "https://duoserendipia.com.ar/",
@@ -86,14 +86,15 @@
         },
         {
             "front": {
-              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-              "title": "Trapecio fijo y dance",
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
+              "title": "Circo Infantil",
               "description": ""
             },
             "back": {
-              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
               "title": "Información",
-              "description": "Martes y Jueves 18hs a 20hs",
+              "description": "Martes y Jueves 18hs",
+              "extraInfo": "(+ 6 años)",
               "action": {
                 "type": "external",
                 "route": "https://duoserendipia.com.ar/",
@@ -103,14 +104,14 @@
           },
           {
               "front": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-                "title": "Tela Principiantes",
-                "description": "(+ 16 años)"
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980275/La%20Troupe/telaAdultos_l4wbdu.jpg",
+                "title": "Tela Adultos",
+                "description": ""
               },
               "back": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980275/La%20Troupe/telaAdultos_l4wbdu.jpg",
                 "title": "Información",
-                "description": "Viernes 18hs a 20hs",
+                "description": "Martes y Jueves 18hs",
                 "action": {
                   "type": "external",
                   "route": "https://duoserendipia.com.ar/",
@@ -120,14 +121,14 @@
             },
             {
                 "front": {
-                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737759127/La%20Troupe/dance-2139804_1280_kaoz8r.jpg",
-                  "title": "Trape Teens",
-                  "description": "(+ 10 años)"
+                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980377/La%20Troupe/trapeDance_qkimci.jpg",
+                  "title": "Trape Dance y Fijo",
+                  "description": ""
                 },
                 "back": {
-                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+                  "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980377/La%20Troupe/trapeDance_qkimci.jpg",
                   "title": "Información",
-                  "description": "Viernes 18hs a 20hs",
+                  "description": "Martes y Jueves 20hs",
                   "action": {
                     "type": "external",
                     "route": "https://duoserendipia.com.ar/",
@@ -137,14 +138,15 @@
               },
               {
                   "front": {
-                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
-                    "title": "Entrenamiento libre",
-                    "description": "(+ 10 años)"
+                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980487/La%20Troupe/trapeAdolescente_z6h0mj.jpg",
+                    "title": "Trape Adolescentes",
+                    "description": ""
                   },
                   "back": {
-                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737757908/La%20Troupe/aro_sg8ata.jpg",
+                    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980487/La%20Troupe/trapeAdolescente_z6h0mj.jpg",
                     "title": "Información",
-                    "description": "Horarios a consultar",
+                    "description": "Martes, Jueves y Viernes 18hs",
+                    "extraInfo": "(+ 10 años)",
                     "action": {
                       "type": "external",
                       "route": "https://duoserendipia.com.ar/",

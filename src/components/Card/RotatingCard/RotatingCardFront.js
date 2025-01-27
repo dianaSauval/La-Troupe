@@ -16,7 +16,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
       alignContent="center"
       borderRadius="lg"
       width="100%"
-      height="250px"
+      height="300px"
       position="relative"
       zIndex={2}
       sx={{
@@ -50,7 +50,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
             {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
           </MKTypography>
         )}
-        <MKTypography variant="h3" color="white" gutterBottom>
+        <MKTypography variant="h4" color="white" gutterBottom>
           {title}
         </MKTypography>
         <MKTypography variant="body2" color="white" opacity={0.8}>

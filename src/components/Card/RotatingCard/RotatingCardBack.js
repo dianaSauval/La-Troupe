@@ -6,7 +6,7 @@ import MKBox from "../../MKBox";
 import MKTypography from "../../MKTypography";
 // import MKButton from "../../MKButton";
 
-function RotatingCard({ color, image, title, description /* , action */ }) {
+function RotatingCard({ color, image, title, description, extraInfo /* , action */ }) {
   return (
     <MKBox
       display="flex"
@@ -27,6 +27,7 @@ function RotatingCard({ color, image, title, description /* , action */ }) {
             rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.85)
           )}, url(${image})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
         backfaceVisibility: "hidden",
         transform: "rotateY(180deg)",
       }}
@@ -59,6 +60,9 @@ function RotatingCard({ color, image, title, description /* , action */ }) {
       >
         <MKTypography variant="h3" color="white" gutterBottom>
           {title}
+        </MKTypography>
+        <MKTypography variant="h5" color="white" opacity={0.8}>
+          {extraInfo}
         </MKTypography>
         <MKTypography variant="body2" color="white" opacity={0.8}>
           {description}
