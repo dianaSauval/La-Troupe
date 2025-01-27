@@ -93,7 +93,7 @@ function NavBar() {
                 <MKTypography
                   component={Link}
                   href={`#${section}`}
-                  variant="p"
+                  variant="h4"
                   color={isScrolled ? "black" : "white"}
                   fontWeight="regular"
                   p={1}
