@@ -51,6 +51,7 @@ function Information() {
                   image={card.back.image}
                   title={card.back.title}
                   description={card.back.description}
+                  description2={card.back.description2}
                   action={card.back.action}
                   extraInfo={card.back.extraInfo}
                 />

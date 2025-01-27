@@ -60,20 +60,20 @@ function NavBar() {
     >
       {/* Logo fuera del navbar */}
       <MKBox
-  component="img"
-  src={logo}
-  alt="Logo"
-  sx={{
-    position: isScrolled ? "relative" : "absolute",
-    top: isScrolled ? "auto" : "20px",
-    left: isScrolled ? "10%" : "20%",
-    transform: isScrolled ? "none" : "translateX(-50%)",
-    height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
-    transition: "all 0.3s ease",
-    zIndex: 2000, // Asegura que esté sobre el navbar
-    maxWidth: { xs: "90%", sm: "80%", md: "none" }, // Ajusta el ancho para pantallas pequeñas
-  }}
-/>
+        component="img"
+        src={logo}
+        alt="Logo"
+        sx={{
+          position: isScrolled ? "relative" : "absolute",
+          top: isScrolled ? "auto" : "20px",
+          left: isScrolled ? "10%" : "20%",
+          transform: isScrolled ? "none" : "translateX(-50%)",
+          height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
+          transition: "all 0.3s ease",
+          zIndex: 2000, // Asegura que esté sobre el navbar
+          maxWidth: { xs: "90%", sm: "80%", md: "none" }, // Ajusta el ancho para pantallas pequeñas
+        }}
+      />
       <Container>
         <Grid container flexDirection="row" alignItems="center" style={{ height: "100%" }}>
           {/* Menú de navegación */}
@@ -99,8 +99,29 @@ function NavBar() {
                   p={1}
                   sx={{
                     fontSize: isScrolled ? "1rem" : "1.125rem",
-                    transition: "font-size 0.3s ease",
                     textDecoration: "none",
+                    position: "relative",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      color: "#261A23",
+                      fontWeight: "bold",
+                    },
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      left: 0,
+                      bottom: 0,
+                      height: "2px",
+                      width: "100%",
+                      background: "#261A23",
+                      transform: "scaleX(0)",
+                      transformOrigin: "right",
+                      transition: "transform 0.3s ease",
+                    },
+                    "&:hover::after": {
+                      transform: "scaleX(1)",
+                      transformOrigin: "left",
+                    },
                   }}
                   onClick={(e) => {
                     e.preventDefault();
@@ -119,6 +140,10 @@ function NavBar() {
               display: { xs: "block", lg: "none" },
               color: isScrolled ? "black" : "white",
               ml: "auto",
+              "&:hover": {
+                transform: "rotate(90deg)",
+                transition: "transform 0.3s ease",
+              },
             }}
           >
             <MKBox component="i" className="fas fa-bars" />
@@ -136,3 +161,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

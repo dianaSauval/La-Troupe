@@ -6,7 +6,7 @@ import MKBox from "../../MKBox";
 import MKTypography from "../../MKTypography";
 // import MKButton from "../../MKButton";
 
-function RotatingCard({ color, image, title, description, extraInfo /* , action */ }) {
+function RotatingCard({ color, image, title, description, extraInfo, description2 /* , action */ }) {
   return (
     <MKBox
       display="flex"
@@ -66,6 +66,9 @@ function RotatingCard({ color, image, title, description, extraInfo /* , action 
         </MKTypography>
         <MKTypography variant="body2" color="white" opacity={0.8}>
           {description}
+        </MKTypography>
+        <MKTypography variant="body2" color="white" opacity={0.8}>
+          {description2}
         </MKTypography>
         {/* Uncomment the following block if you want to use the action button
         {action && (
