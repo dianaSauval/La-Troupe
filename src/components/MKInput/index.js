@@ -19,7 +19,7 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // Custom styles for MKInput
-import MKInputRoot from "../MKInput/MKInputRoot";
+import MKInputRoot from "./MKInputRoot";
 
 const MKInput = forwardRef(({ error, success, disabled, ...rest }, ref) => (
   <MKInputRoot {...rest} ref={ref} ownerState={{ error, success, disabled }} />
