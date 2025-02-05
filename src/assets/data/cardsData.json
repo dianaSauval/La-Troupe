@@ -67,40 +67,6 @@
         }
       }
     },
-    {
-        "front": {
-          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980017/La%20Troupe/cintas_rey31p.jpg",
-          "title": "Cintas",
-          "description": ""
-        },
-        "back": {
-          "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980017/La%20Troupe/cintas_rey31p.jpg",
-          "title": "Información",
-          "description": "Lunes y Miércoles 18hs",
-          "action": {
-            "type": "external",
-            "route": "https://duoserendipia.com.ar/",
-            "label": "start with header"
-          }
-        }
-      },
-      {
-          "front": {
-            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980082/La%20Troupe/Trapecio_o7ns5k.jpg",
-            "title": "Trapecio",
-            "description": ""
-          },
-          "back": {
-            "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980082/La%20Troupe/Trapecio_o7ns5k.jpg",
-            "title": "Información",
-            "description": "Lunes y Miércoles 18hs",
-            "action": {
-              "type": "external",
-              "route": "https://duoserendipia.com.ar/",
-              "label": "start with header"
-            }
-          }
-        },
         {
             "front": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
@@ -121,12 +87,12 @@
           },
           {
               "front": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980275/La%20Troupe/telaAdultos_l4wbdu.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738795505/La%20Troupe/tela_mhefkm.jpg",
                 "title": "Tela Adultos",
                 "description": ""
               },
               "back": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980275/La%20Troupe/telaAdultos_l4wbdu.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738795505/La%20Troupe/tela_mhefkm.jpg",
                 "title": "Información",
                 "description": "Martes y Jueves 18hs",
                 "description2": "Sábados 10hs",
@@ -171,5 +137,39 @@
                       "label": "start with header"
                     }
                   }
-                }
+                },
+                {
+                    "front": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
+                      "title": "Ritmos Latinos",
+                      "description": ""
+                    },
+                    "back": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
+                      "title": "Información",
+                      "description": "Jueves de 18 a 19hs",
+                      "action": {
+                        "type": "external",
+                        "route": "https://duoserendipia.com.ar/",
+                        "label": "start with header"
+                      }
+                    }
+                  },
+                {
+                    "front": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
+                      "title": "Ballroom Dance",
+                      "description": ""
+                    },
+                    "back": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
+                      "title": "Información",
+                      "description": "Jueves de 19 a 20hs",
+                      "action": {
+                        "type": "external",
+                        "route": "https://duoserendipia.com.ar/",
+                        "label": "start with header"
+                      }
+                    }
+                  }
   ]
