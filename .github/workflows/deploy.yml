@@ -1,0 +1,35 @@
+name: 🚀 Deploy La Troupe to LatinCloud (ElServer)
+
+on:
+  push:
+    branches:
+      - main  # Se ejecutará cuando subas cambios a la rama main
+
+jobs:
+  deploy:
+    name: Build and Upload to FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Descargar el código del repositorio
+        uses: actions/checkout@v3
+
+      - name: 🏗️ Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Ajusta según tu versión de Node.js
+
+      - name: 📦 Instalar dependencias
+        run: npm install
+
+      - name: 🏗️ Construir la aplicación (React con Create React App)
+        run: CI=false npm run build
+
+      - name: 🚀 Subir SOLO el contenido de "build/" al servidor FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: "./build/"  # Solo sube el contenido de build
+          server-dir: "/latroupecirco.com.ar/public/"  # Ruta en tu servidor
