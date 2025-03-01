@@ -50,7 +50,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
             {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
           </MKTypography>
         )}
-        <MKTypography variant="h4" color="white" gutterBottom>
+        <MKTypography variant="h4" color="white" gutterBottom sx={{ marginTop: "-20px" }}>
           {title}
         </MKTypography>
         <MKTypography variant="body2" color="white" opacity={0.8}>
