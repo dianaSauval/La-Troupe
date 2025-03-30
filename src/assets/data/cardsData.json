@@ -8,8 +8,7 @@
       "back": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
         "title": "Información",
-        "description": "Sábados 10hs",
-        "description2": "Jueves 20hs",
+        "description": "Jueves 20hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",

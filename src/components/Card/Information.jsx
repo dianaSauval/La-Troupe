@@ -73,7 +73,7 @@ function Information() {
         </MKTypography>
         <MKBox
           component="img"
-          src="https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740854107/La%20Troupe/horarios_marzo_ih5jf8.jpg" // Reemplaza con la ruta de tu imagen
+          src="https://res.cloudinary.com/dkdhdy9e5/image/upload/v1743329939/La%20Troupe/horarios-abril_kuqjhv.jpg" // Reemplaza con la ruta de tu imagen
           alt="Horarios"
           sx={{
             width: "100%", // Ancho máximo
