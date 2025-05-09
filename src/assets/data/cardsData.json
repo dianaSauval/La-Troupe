@@ -131,7 +131,8 @@
                 "back": {
                   "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980377/La%20Troupe/trapeDance_qkimci.jpg",
                   "title": "Información",
-                  "description": "Martes y Jueves 20hs",
+                  "description": "Lunes y Miércoles 18hs",
+                  "description2": "Martes y Jueves 20hs",
                   "action": {
                     "type": "external",
                     "route": "https://duoserendipia.com.ar/",
@@ -157,40 +158,6 @@
                     }
                   }
                 },
-                {
-                    "front": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
-                      "title": "Salsa y Bachata",
-                      "description": ""
-                    },
-                    "back": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
-                      "title": "Información",
-                      "description": "Jueves de 18 a 19hs",
-                      "action": {
-                        "type": "external",
-                        "route": "https://duoserendipia.com.ar/",
-                        "label": "start with header"
-                      }
-                    }
-                  },
-                {
-                    "front": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
-                      "title": "Ballroom Dance",
-                      "description": ""
-                    },
-                    "back": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738793930/La%20Troupe/WhatsApp_Image_2025-02-05_at_7.16.53_PM_yhnvr6.jpg",
-                      "title": "Información",
-                      "description": "Jueves de 19 a 20hs",
-                      "action": {
-                        "type": "external",
-                        "route": "https://duoserendipia.com.ar/",
-                        "label": "start with header"
-                      }
-                    }
-                  },
                   {
                     "front": {
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856277/La%20Troupe/ballet_inicial_laihk2.jpg",

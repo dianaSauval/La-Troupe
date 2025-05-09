@@ -65,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "ajv": "^7.2.4",
     "eslint": "8.38.0",
     "eslint-config-prettier": "8.8.0",
