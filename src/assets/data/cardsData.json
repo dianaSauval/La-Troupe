@@ -87,6 +87,22 @@
             }
           },{
             "front": {
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1746806505/La%20Troupe/tela_flexi_ksjv4n.jpg",
+              "title": "Tela y Flexibilidad",
+              "description": ""
+            },
+            "back": {
+              "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1746806505/La%20Troupe/tela_flexi_ksjv4n.jpg",
+              "title": "Información",
+              "description": "Martes 20hs",
+              "action": {
+                "type": "external",
+                "route": "https://duoserendipia.com.ar/",
+                "label": "start with header"
+              }
+            }
+          },{
+            "front": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
               "title": "Circo Peques",
               "description": ""
