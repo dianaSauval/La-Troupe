@@ -94,7 +94,7 @@
             "back": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1746806505/La%20Troupe/tela_flexi_ksjv4n.jpg",
               "title": "Información",
-              "description": "Martes 20hs",
+              "description": "Viernes 18hs",
               "action": {
                 "type": "external",
                 "route": "https://duoserendipia.com.ar/",
