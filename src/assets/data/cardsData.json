@@ -176,24 +176,6 @@
                 },
                   {
                     "front": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856277/La%20Troupe/ballet_inicial_laihk2.jpg",
-                      "title": "Danza inicial al Ballet",
-                      "description": ""
-                    },
-                    "back": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856277/La%20Troupe/ballet_inicial_laihk2.jpg",
-                      "title": "Información",
-                      "description": "Lunes 18hs",
-                      "extraInfo":"(+ 3 años)",
-                      "action": {
-                        "type": "external",
-                        "route": "https://duoserendipia.com.ar/",
-                        "label": "start with header"
-                      }
-                    }
-                  },
-                  {
-                    "front": {
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740857629/La%20Troupe/ballet_jovenes_v7dhkt.jpg",
                       "title": "Ballet Principiantes",
                       "description": ""
@@ -220,6 +202,25 @@
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856796/La%20Troupe/ballet_avanzado_czurir.jpg",
                       "title": "Información",
                       "description": "Miércoles 17:30hs",
+                      "action": {
+                        "type": "external",
+                        "route": "https://duoserendipia.com.ar/",
+                        "label": "start with header"
+                      }
+                    }
+                  },
+                   {
+                    "front": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1751707347/La%20Troupe/artes_marciales_agl07f.jpg",
+                      "title": "Karate",
+                      "description": ""
+                    },
+                    "back": {
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1751707347/La%20Troupe/artes_marciales_agl07f.jpg",
+                      "title": "Información",
+                      "description": "Lunes y Miércoles 19:30hs",
+                      "description2": "Viernes 19hs",
+                      "extraInfo":"",
                       "action": {
                         "type": "external",
                         "route": "https://duoserendipia.com.ar/",
