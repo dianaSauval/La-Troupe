@@ -9,6 +9,7 @@
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
         "title": "Información",
         "description": "Jueves 20hs",
+        "description2": "Sábados 10hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
@@ -111,7 +112,7 @@
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
               "title": "Información",
               "description": "Lunes, Martes, Miércoles, Jueves y viernes 16:30hs y 17:45hs",
-              "description2": "Sábados 10hs, 11:15hs y 12:30hs",
+              "description2": "Sábados 10hs y 11:15hs",
               "extraInfo": "(hasta 6 años)",
               "action": {
                 "type": "external",
@@ -147,8 +148,7 @@
                 "back": {
                   "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980377/La%20Troupe/trapeDance_qkimci.jpg",
                   "title": "Información",
-                  "description": "Lunes y Miércoles 18hs",
-                  "description2": "Martes y Jueves 20hs",
+                  "description": "Martes y Jueves 20hs",
                   "action": {
                     "type": "external",
                     "route": "https://duoserendipia.com.ar/",
@@ -176,15 +176,14 @@
                 },
                   {
                     "front": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740857629/La%20Troupe/ballet_jovenes_v7dhkt.jpg",
-                      "title": "Ballet Principiantes",
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1754468615/La%20Troupe/pole_aereo_h4ap7r.jpg",
+                      "title": "Pole Aéreo",
                       "description": ""
                     },
                     "back": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740857629/La%20Troupe/ballet_jovenes_v7dhkt.jpg",
+                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1754468615/La%20Troupe/pole_aereo_h4ap7r.jpg",
                       "title": "Información",
-                      "description": "Lunes 19hs",
-                      "extraInfo":"Jóvenes y Adultos",
+                      "description": "Lunes 20hs",
                       "action": {
                         "type": "external",
                         "route": "https://duoserendipia.com.ar/",
@@ -192,23 +191,7 @@
                       }
                     }
                   },
-                  {
-                    "front": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856796/La%20Troupe/ballet_avanzado_czurir.jpg",
-                      "title": "Ballet Avanzados",
-                      "description": ""
-                    },
-                    "back": {
-                      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1740856796/La%20Troupe/ballet_avanzado_czurir.jpg",
-                      "title": "Información",
-                      "description": "Miércoles 17:30hs",
-                      "action": {
-                        "type": "external",
-                        "route": "https://duoserendipia.com.ar/",
-                        "label": "start with header"
-                      }
-                    }
-                  },
+                
                    {
                     "front": {
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1751707347/La%20Troupe/artes_marciales_agl07f.jpg",
