@@ -165,7 +165,7 @@
                   "back": {
                     "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980487/La%20Troupe/trapeAdolescente_z6h0mj.jpg",
                     "title": "Información",
-                    "description": "Martes, Jueves y Viernes 18hs",
+                    "description": "Martes y Jueves 18hs",
                     "extraInfo": "(+ 10 años)",
                     "action": {
                       "type": "external",
@@ -201,8 +201,7 @@
                     "back": {
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1751707347/La%20Troupe/artes_marciales_agl07f.jpg",
                       "title": "Información",
-                      "description": "Lunes y Miércoles 19:30hs",
-                      "description2": "Viernes 19hs",
+                      "description": "Lunes, Miércoles y Viernes 19hs",
                       "extraInfo":"",
                       "action": {
                         "type": "external",
