@@ -4,32 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ff5733" />
-    <meta name="description" content="Escuela de circo La Troupe - Clases de tela, trapecio, aro y más para todas las edades." />
-    
-    <title>La Troupe - Escuela de Circo</title>
-    
-    <!-- Favicon -->
+
+    <!-- Título y descripción genéricos (la SPA luego pondrá títulos dinámicos con Helmet si querés) -->
+    <title>La Troupe – Escuela de Circo en Banfield (Buenos Aires)</title>
+    <meta name="description" content="Clases de tela, trapecio, aro, rueda Cyr y más, para infancias y adultos, en Banfield. Shows y alquiler de espacio." />
+    <link rel="canonical" href="https://latroupecirco.com.ar/" />
+
+    <!-- Favicon & PWA -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Fonts: preconnect + swap -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- OG/Twitter (actualizá la imagen a 1200x630) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="La Troupe – Escuela de Circo" />
+    <meta property="og:description" content="Clases de circo en Banfield y shows. Telas, trapecio, aro, rueda Cyr, mano a mano y más." />
+    <meta property="og:image" content="https://latroupecirco.com.ar/social-image.jpg" />
+    <meta property="og:url" content="https://latroupecirco.com.ar/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preload de la imagen del hero para mejor LCP -->
+    <link rel="preload" as="image" href="/assets/images/fotobanner.jpeg" imagesrcset="/assets/images/fotobanner.jpeg 1200w" />
     
-    <!-- Fuentes y estilos -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <!-- (Opcional) CSS base propio -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    
-    <!-- Open Graph para compartir en redes sociales -->
-    <meta property="og:title" content="La Troupe - Escuela de Circo" />
-    <meta property="og:description" content="Clases de tela, trapecio, aro y circo para infantes y adultos en un ambiente divertido y seguro." />
-    <meta property="og:image" content="%PUBLIC_URL%/social-image.jpg" />
-    <meta property="og:url" content="https://la-troupe.vercel.app/" />
-    
   </head>
   <body>
-    <noscript>Necesitas habilitar JavaScript para disfrutar completamente de esta web.</noscript>
-    <div id="root">
-      <header>
-        <img src="%PUBLIC_URL%/favicon.ico" alt="Logo de La Troupe" width="150" height="auto" />
-      </header>
-    </div>
+    <noscript>Necesitás habilitar JavaScript para disfrutar completamente de esta web.</noscript>
+    <div id="root"></div>
   </body>
 </html>

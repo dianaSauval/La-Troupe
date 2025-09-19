@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Aplica a cualquier elemento con id (secciones a las que vas con #) */
+[id] {
+  scroll-margin-top: 30px; /* ajustá según la altura de tu navbar */
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

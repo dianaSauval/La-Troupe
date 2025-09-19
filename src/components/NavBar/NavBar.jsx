@@ -8,41 +8,29 @@ import MKTypography from "../MKTypography";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import logo from "../../assets/images/logo3.png";
 
+const SECTIONS = [
+  { id: "inicio",   label: "Inicio" },
+  { id: "escuela",  label: "Escuela" },
+  { id: "clases",   label: "Clases" },
+  { id: "rental",   label: "Alquiler" }, // <-- antes ponías "alquiler" (mismatch). Ajustado a "rental"
+  { id: "contacto", label: "Contacto" },
+];
+
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleDrawer = (open) => {
-    setIsDrawerOpen(open);
-  };
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    const offset = 55; // Altura del NavBar
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-    setIsDrawerOpen(false); // Cierra el menú móvil después de seleccionar una sección
-  };
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Cambia de estado cuando se haga scroll hacia abajo
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <MKBox
       component="nav"
+      role="navigation"
+      aria-label="Menú principal"
       position="fixed"
       top="0"
       width="100vw"
@@ -58,53 +46,64 @@ function NavBar() {
         overflow: "visible",
       }}
     >
-      {/* Logo fuera del navbar */}
+      {/* Logo como link a inicio */}
       <MKBox
-        component="img"
-        src={logo}
-        alt="Logo"
+        component="a"
+        href="#inicio"
+        aria-label="Ir al inicio"
         sx={{
           position: isScrolled ? "relative" : "absolute",
           top: isScrolled ? "auto" : "20px",
           left: isScrolled ? "10%" : "20%",
           transform: isScrolled ? "none" : "translateX(-50%)",
-          height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
-          transition: "all 0.3s ease",
-          zIndex: 2000, // Asegura que esté sobre el navbar
-          maxWidth: { xs: "90%", sm: "80%", md: "none" }, // Ajusta el ancho para pantallas pequeñas
+          display: "inline-flex",
+          alignItems: "center",
+          zIndex: 2000,
         }}
-      />
+      >
+        <MKBox
+          component="img"
+          src={logo}
+          alt="La Troupe Multiespacio – logo"
+          sx={{
+            height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
+            width: "auto",
+            transition: "all 0.3s ease",
+            maxWidth: { xs: "90%", sm: "80%", md: "none" },
+          }}
+        />
+      </MKBox>
+
       <Container>
-        <Grid container flexDirection="row" alignItems="center" style={{ height: "100%" }}>
-          {/* Menú de navegación */}
+        <Grid container flexDirection="row" alignItems="center" sx={{ height: "100%" }}>
+          {/* Menú desktop */}
           <MKBox
             component="ul"
             display={{ xs: "none", lg: "flex" }}
             p={0}
             my={0}
             mx="auto"
-            sx={{
-              listStyle: "none",
-              paddingInlineStart: 0,
-            }}
+            sx={{ listStyle: "none", paddingInlineStart: 0, gap: "1rem" }}
           >
-            {["inicio", "escuela", "clases", "alquiler", "contacto"].map((section) => (
-              <MKBox component="li" key={section} sx={{ marginInlineEnd: "1rem" }}>
+            {SECTIONS.map(({ id, label }) => (
+              <MKBox component="li" key={id}>
                 <MKTypography
                   component={Link}
-                  href={`#${section}`}
+                  href={`#${id}`}          // hash nativo
                   variant="h4"
                   color={isScrolled ? "black" : "white"}
                   fontWeight="regular"
                   p={1}
+                  underline="none"
                   sx={{
                     fontSize: isScrolled ? "1rem" : "1.125rem",
-                    textDecoration: "none",
                     position: "relative",
                     transition: "all 0.3s ease",
-                    "&:hover": {
-                      color: "#261A23",
-                      fontWeight: "bold",
+                    outlineOffset: "2px",
+                    "&:hover": { color: "#261A23", fontWeight: "bold" },
+                    "&:focus-visible": {
+                      outline: "2px solid currentColor",
+                      borderRadius: "4px",
                     },
                     "&::after": {
                       content: '""',
@@ -123,42 +122,46 @@ function NavBar() {
                       transformOrigin: "left",
                     },
                   }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(section);
-                  }}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {label}
                 </MKTypography>
               </MKBox>
             ))}
           </MKBox>
-          {/* Botón de menú hamburguesa */}
+
+          {/* Botón hamburguesa (mobile) */}
           <IconButton
-            onClick={() => toggleDrawer(true)}
+            onClick={() => setIsDrawerOpen(true)}
+            aria-label="Abrir menú"
+            aria-controls="mobile-menu"
+            aria-expanded={isDrawerOpen ? "true" : "false"}
             sx={{
               display: { xs: "block", lg: "none" },
               color: isScrolled ? "black" : "white",
               ml: "auto",
-              "&:hover": {
-                transform: "rotate(90deg)",
-                transition: "transform 0.3s ease",
-              },
+              "&:hover": { transform: "rotate(90deg)", transition: "transform 0.3s ease" },
             }}
           >
             <MKBox component="i" className="fas fa-bars" />
           </IconButton>
         </Grid>
       </Container>
-      {/* Componente del menú hamburguesa */}
+
+      {/* Menú móvil */}
       <HamburgerMenu
+        id="mobile-menu"
         isOpen={isDrawerOpen}
-        onClose={() => toggleDrawer(false)}
-        scrollToSection={scrollToSection}
+        onClose={() => setIsDrawerOpen(false)}
+        scrollToSection={(sectionId) => {
+          setIsDrawerOpen(false);
+          // hash nativo: actualiza URL y permite compartir
+          window.location.hash = sectionId;
+          document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+        }}
+        sections={SECTIONS} // si tu componente lo admite
       />
     </MKBox>
   );
 }
 
 export default NavBar;
-
