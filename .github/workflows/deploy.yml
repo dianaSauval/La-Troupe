@@ -3,7 +3,7 @@ name: 🚀 Deploy La Troupe to LatinCloud (ElServer)
 on:
   push:
     branches:
-      - main  # Se ejecutará cuando subas cambios a la rama main
+      - main
 
 jobs:
   deploy:
@@ -12,17 +12,29 @@ jobs:
 
     steps:
       - name: 📥 Descargar el código del repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🏗️ Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18  # Ajusta según tu versión de Node.js
+          node-version: 18
+          cache: 'npm'
 
       - name: 📦 Instalar dependencias
-        run: npm install
+        run: npm ci
 
-      - name: 🏗️ Construir la aplicación (React con Create React App)
+      # Crear el .env SOLO dentro del runner (no se commitea)
+      - name: 🔐 Crear archivo .env con Secrets (CRA)
+        run: |
+          cat > .env << 'EOF'
+          REACT_APP_EMAILJS_SERVICE_ID=${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}
+          REACT_APP_EMAILJS_TEMPLATE_ID=${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}
+          REACT_APP_EMAILJS_PUBLIC_KEY=${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY }}
+          REACT_APP_RECAPTCHA_SITE_KEY=${{ secrets.REACT_APP_RECAPTCHA_SITE_KEY }}
+          EOF
+
+      # CRA a veces falla el build por warnings si CI=true, lo desactivamos
+      - name: 🏗️ Construir la aplicación (Create React App)
         run: CI=false npm run build
 
       - name: 🚀 Subir SOLO el contenido de "build/" al servidor FTP
@@ -31,5 +43,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./build/"  # Solo sube el contenido de build
-          server-dir: "/latroupecirco.com.ar/public/"  # Ruta en tu servidor
+          local-dir: ./build/
+          server-dir: /latroupecirco.com.ar/public/
+          # Opcional: descomenta para limpiar destino antes de subir
+          # dangerous-clean-slate: true
