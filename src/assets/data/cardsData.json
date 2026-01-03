@@ -8,8 +8,7 @@
       "back": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
         "title": "Información",
-        "description": "Jueves 20hs",
-        "description2": "Sábados 10hs",
+        "description": "Sábados 10hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
@@ -59,7 +58,7 @@
       "back": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738004714/La%20Troupe/WhatsApp_Image_2025-01-27_at_12.33.30_PM_yshtzo.jpg",
         "title": "Información",
-        "description": " lunes, miércoles y viernes 18hs",
+        "description": " lunes y miércoles 18hs",
         "extraInfo":"(+10 años)",
         "action": {
           "type": "external",
@@ -77,8 +76,7 @@
             "back": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
               "title": "Información",
-              "description": "Lunes, Martes, Miércoles, Jueves y viernes 17:15hs y 19hs",
-              "description2": "Sábados 10hs y 11:45hs",
+              "description": "Durante enero no habrá clases",
               "extraInfo": "(+ 6 años)",
               "action": {
                 "type": "external",
@@ -111,8 +109,7 @@
             "back": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980182/La%20Troupe/circoInfantes_qtehcp.jpg",
               "title": "Información",
-              "description": "Lunes, Martes, Miércoles, Jueves y viernes 16:30hs y 17:45hs",
-              "description2": "Sábados 10hs y 11:15hs",
+              "description": "Miércoles 17:30hs",
               "extraInfo": "(hasta 6 años)",
               "action": {
                 "type": "external",
@@ -165,7 +162,7 @@
                   "back": {
                     "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980487/La%20Troupe/trapeAdolescente_z6h0mj.jpg",
                     "title": "Información",
-                    "description": "Martes y Jueves 18hs",
+                    "description": "Miercoles 18hs",
                     "extraInfo": "(+ 10 años)",
                     "action": {
                       "type": "external",
@@ -184,6 +181,7 @@
                       "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1754557209/La%20Troupe/pole-aereo_a9ygzt.jpg",
                       "title": "Información",
                       "description": "Lunes 20hs",
+                      "description2": "Viernes 18hs",
                       "action": {
                         "type": "external",
                         "route": "https://duoserendipia.com.ar/",
