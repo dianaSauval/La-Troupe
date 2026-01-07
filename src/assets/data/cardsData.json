@@ -36,13 +36,13 @@
     {
       "front": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979913/La%20Troupe/telaPrincipiantes_oknyot.jpg",
-        "title": "Tela principiantes",
-        "description": ""
+        "title": "Tela Adultos",
+        "description": "principiantes"
       },
       "back": {
         "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979913/La%20Troupe/telaPrincipiantes_oknyot.jpg",
         "title": "Información",
-        "description": "Miércoles 20hs",
+        "description": "Miércoles y viernes 20hs",
         "action": {
           "type": "external",
           "route": "https://duoserendipia.com.ar/",
@@ -87,13 +87,13 @@
           },{
             "front": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1746806505/La%20Troupe/tela_flexi_ksjv4n.jpg",
-              "title": "Tela y Flexibilidad",
+              "title": "Flexibilidad",
               "description": ""
             },
             "back": {
               "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1746806505/La%20Troupe/tela_flexi_ksjv4n.jpg",
               "title": "Información",
-              "description": "Viernes 18hs",
+              "description": "Viernes 20:30hs",
               "action": {
                 "type": "external",
                 "route": "https://duoserendipia.com.ar/",
@@ -120,14 +120,14 @@
           },
           {
               "front": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738795505/La%20Troupe/tela_mhefkm.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1767795032/La%20Troupe/tela_jeiomy.jpg",
                 "title": "Tela Adultos",
                 "description": ""
               },
               "back": {
-                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1738795505/La%20Troupe/tela_mhefkm.jpg",
+                "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1767795032/La%20Troupe/tela_jeiomy.jpg",
                 "title": "Información",
-                "description": "Martes y Jueves 18hs",
+                "description": "Martes, Jueves y Viernes 18hs",
                 "description2": "Sábados 10hs",
                 "action": {
                   "type": "external",
@@ -135,7 +135,7 @@
                   "label": "start with header"
                 }
               }
-            },
+            },          
             {
                 "front": {
                   "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737980377/La%20Troupe/trapeDance_qkimci.jpg",
