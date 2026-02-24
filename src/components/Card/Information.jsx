@@ -42,18 +42,14 @@ function Information() {
                   image={card.front.image}
                   icon=""
                   title={card.front.title}
-                  description={card.front.description}
-                  sx={{
-                    backgroundPosition: "center top",
-                  }}
+                  description={card.front.subtitle}
                 />
                 <RotatingCardBack
-                  image={card.back.image}
+                  image={card.front.image} // o card.back.image si querés
                   title={card.back.title}
-                  description={card.back.description}
-                  description2={card.back.description2}
+                  meta={card.back.meta}
+                  schedules={card.back.schedules}
                   action={card.back.action}
-                  extraInfo={card.back.extraInfo}
                 />
               </RotatingCard>
             </Grid>

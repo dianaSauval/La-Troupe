@@ -9,10 +9,10 @@ import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import logo from "../../assets/images/logo3.png";
 
 const SECTIONS = [
-  { id: "inicio",   label: "Inicio" },
-  { id: "escuela",  label: "Escuela" },
-  { id: "clases",   label: "Clases" },
-  { id: "rental",   label: "Alquiler" }, // <-- antes ponías "alquiler" (mismatch). Ajustado a "rental"
+  { id: "inicio", label: "Inicio" },
+  { id: "escuela", label: "Escuela" },
+  { id: "clases", label: "Clases" },
+  { id: "rental", label: "Alquiler" }, // <-- antes ponías "alquiler" (mismatch). Ajustado a "rental"
   { id: "contacto", label: "Contacto" },
 ];
 
@@ -32,15 +32,18 @@ function NavBar() {
       role="navigation"
       aria-label="Menú principal"
       position="fixed"
-      top="0"
-      width="100vw"
+      top={0}
+      left={0}
+      right={0}
       zIndex="1100"
       sx={{
-        transition: "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
+        width: "100%",
+        transition:
+          "background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease",
         backgroundColor: isScrolled ? "#FFCE00" : "transparent",
         color: isScrolled ? "black" : "white",
         boxShadow: isScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
-        height: "55px",
+        height: isScrolled ? "55px" : { xs: "86px", sm: "96px", md: "90px" }, // ✅
         display: "flex",
         alignItems: "center",
         overflow: "visible",
@@ -52,10 +55,14 @@ function NavBar() {
         href="#inicio"
         aria-label="Ir al inicio"
         sx={{
-          position: isScrolled ? "relative" : "absolute",
-          top: isScrolled ? "auto" : "20px",
-          left: isScrolled ? "10%" : "20%",
-          transform: isScrolled ? "none" : "translateX(-50%)",
+          position: "absolute",
+          left: { xs: "16px", md: "10%" },
+          top: "50%",
+          transform: isScrolled
+            ? "translateY(-50%) scale(0.92)"
+            : "translateY(calc(-50% + 18px)) scale(1.15)",
+          transformOrigin: "left center",
+          transition: "transform 0.28s ease",
           display: "inline-flex",
           alignItems: "center",
           zIndex: 2000,
@@ -66,7 +73,9 @@ function NavBar() {
           src={logo}
           alt="La Troupe Multiespacio – logo"
           sx={{
-            height: isScrolled ? "35px" : { xs: "60px", sm: "80px", md: "100px" },
+            height: isScrolled
+              ? "35px"
+              : { xs: "60px", sm: "80px", md: "100px" },
             width: "auto",
             transition: "all 0.3s ease",
             maxWidth: { xs: "90%", sm: "80%", md: "none" },
@@ -75,7 +84,12 @@ function NavBar() {
       </MKBox>
 
       <Container>
-        <Grid container flexDirection="row" alignItems="center" sx={{ height: "100%" }}>
+        <Grid
+          container
+          flexDirection="row"
+          alignItems="center"
+          sx={{ height: "100%" }}
+        >
           {/* Menú desktop */}
           <MKBox
             component="ul"
@@ -89,7 +103,7 @@ function NavBar() {
               <MKBox component="li" key={id}>
                 <MKTypography
                   component={Link}
-                  href={`#${id}`}          // hash nativo
+                  href={`#${id}`} // hash nativo
                   variant="h4"
                   color={isScrolled ? "black" : "white"}
                   fontWeight="regular"
@@ -139,7 +153,10 @@ function NavBar() {
               display: { xs: "block", lg: "none" },
               color: isScrolled ? "black" : "white",
               ml: "auto",
-              "&:hover": { transform: "rotate(90deg)", transition: "transform 0.3s ease" },
+              "&:hover": {
+                transform: "rotate(90deg)",
+                transition: "transform 0.3s ease",
+              },
             }}
           >
             <MKBox component="i" className="fas fa-bars" />
@@ -156,7 +173,9 @@ function NavBar() {
           setIsDrawerOpen(false);
           // hash nativo: actualiza URL y permite compartir
           window.location.hash = sectionId;
-          document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+          document
+            .getElementById(sectionId)
+            ?.scrollIntoView({ behavior: "smooth" });
         }}
         sections={SECTIONS} // si tu componente lo admite
       />
