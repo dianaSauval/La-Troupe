@@ -18,7 +18,11 @@
         { "day": "Sábado", "time": "10:00 a 11:00", "teacher": "Vicki C." },
         { "day": "Sábado", "time": "11:15 a 12:15", "teacher": "Vicki C." }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -36,19 +40,47 @@
         { "day": "Lunes", "time": "17:15 a 18:45", "teacher": "Maia y Mel" },
         { "day": "Lunes", "time": "19:00 a 20:30", "teacher": "Maia y Mel" },
 
-        { "day": "Martes", "time": "17:15 a 18:45", "teacher": "Vicki C. y Eli" },
-        { "day": "Martes", "time": "19:00 a 20:30", "teacher": "Vicki C. y Eli" },
+        {
+          "day": "Martes",
+          "time": "17:15 a 18:45",
+          "teacher": "Vicki C. y Eli"
+        },
+        {
+          "day": "Martes",
+          "time": "19:00 a 20:30",
+          "teacher": "Vicki C. y Eli"
+        },
 
-        { "day": "Miércoles", "time": "17:15 a 18:45", "teacher": "Maia y Mel" },
-        { "day": "Miércoles", "time": "19:00 a 20:30", "teacher": "Maia y Mel" },
+        {
+          "day": "Miércoles",
+          "time": "17:15 a 18:45",
+          "teacher": "Maia y Mel"
+        },
+        {
+          "day": "Miércoles",
+          "time": "19:00 a 20:30",
+          "teacher": "Maia y Mel"
+        },
 
-        { "day": "Jueves", "time": "17:15 a 18:45", "teacher": "Vicki C. y Eli" },
-        { "day": "Jueves", "time": "19:00 a 20:30", "teacher": "Vicki C. y Eli" },
+        {
+          "day": "Jueves",
+          "time": "17:15 a 18:45",
+          "teacher": "Vicki C. y Eli"
+        },
+        {
+          "day": "Jueves",
+          "time": "19:00 a 20:30",
+          "teacher": "Vicki C. y Eli"
+        },
 
         { "day": "Sábado", "time": "10:00 a 11:30", "teacher": "Juani y Mica" },
         { "day": "Sábado", "time": "11:45 a 13:15", "teacher": "Juani y Mica" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -65,7 +97,11 @@
       "schedules": [
         { "day": "Miércoles", "time": "18:00 a 20:00", "teacher": "Juana" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -82,7 +118,11 @@
       "schedules": [
         { "day": "Miércoles", "time": "18:00 a 20:00", "teacher": "Ali" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -102,7 +142,11 @@
         { "day": "Viernes", "time": "18:00 a 20:00", "teacher": "Meru" },
         { "day": "Sábado", "time": "10:00 a 12:00", "teacher": "Agus y Meru" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -120,7 +164,11 @@
         { "day": "Martes", "time": "20:00 a 22:00", "teacher": "Alihuen" },
         { "day": "Jueves", "time": "20:00 a 22:00", "teacher": "Alihuen" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -138,7 +186,11 @@
         { "day": "Martes", "time": "18:00 a 20:00", "teacher": "Lucha" },
         { "day": "Sábado", "time": "10:00 a 12:00", "teacher": "Lucía" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -155,7 +207,11 @@
       "schedules": [
         { "day": "Jueves", "time": "20:00 a 22:00", "teacher": "Maia" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -173,7 +229,11 @@
         { "day": "Miércoles", "time": "20:00 a 22:00", "teacher": "Juana" },
         { "day": "Viernes", "time": "20:00 a 22:00", "teacher": "Juana" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -189,9 +249,18 @@
       "meta": "Adultos",
       "schedules": [
         { "day": "Lunes", "time": "20:00 a 22:00", "teacher": "Juani" },
-        { "day": "Viernes", "time": "18:00 a 20:00", "teacher": "Juana", "note": "Compartido con Tela Adultos" }
+        {
+          "day": "Viernes",
+          "time": "18:00 a 20:00",
+          "teacher": "Juana",
+          "note": "Compartido con Tela Adultos"
+        }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -209,7 +278,11 @@
         { "day": "Lunes", "time": "20:00 a 22:00", "teacher": "Meru" },
         { "day": "Miércoles", "time": "20:00 a 22:00", "teacher": "Meru" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   },
   {
@@ -226,7 +299,42 @@
       "schedules": [
         { "day": "Viernes", "time": "20:30 a 22:00", "teacher": "Meru" }
       ],
-      "action": { "type": "external", "route": "https://duoserendipia.com.ar/", "label": "Más info" }
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
+    }
+  },
+  {
+    "id": "acrobacia-de-suelo",
+    "front": {
+      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1777653905/La%20Troupe/acrobacia_ze8t5c.jpg",
+      "title": "Acrobacia de Suelo",
+      "subtitle": "Multinivel",
+      "tag": "Entrenamiento"
+    },
+    "back": {
+      "title": "Horarios",
+      "meta": "Acrobacia de suelo · Multinivel",
+      "schedules": [
+        {
+          "day": "Jueves",
+          "time": "10:00",
+          "teacher": ""
+        }
+      ],
+      "description": [
+        "Entrenamiento integral: fuerza y flexibilidad",
+        "Técnicas en suelo, mini tramp y airtrack",
+        "Laboratorio de movimiento",
+        "Espacio multinivel"
+      ],
+      "action": {
+        "type": "external",
+        "route": "https://duoserendipia.com.ar/",
+        "label": "Más info"
+      }
     }
   }
 ]
