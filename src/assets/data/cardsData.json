@@ -174,7 +174,7 @@
   {
     "id": "trape-aro-adultos",
     "front": {
-      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1737979167/La%20Troupe/aro_spersm.jpg",
+      "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1781304565/La%20Troupe/trape-y-aro_fxsbch.jpg",
       "title": "Trape y Aro Adultos",
       "subtitle": "",
       "tag": "Adultos"
@@ -183,8 +183,7 @@
       "title": "Horarios",
       "meta": "Adultos",
       "schedules": [
-        { "day": "Martes", "time": "18:00 a 20:00", "teacher": "Lucha" },
-        { "day": "Sábado", "time": "10:00 a 12:00", "teacher": "Lucía" }
+        { "day": "Sábado", "time": "10:00 a 12:00", "teacher": "Clari" }
       ],
       "action": {
         "type": "external",
