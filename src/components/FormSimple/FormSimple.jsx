@@ -2,34 +2,61 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Switch from "@mui/material/Switch";
+
 import MKBox from "../MKBox";
 import MKInput from "../MKInput";
 import MKButton from "../MKButton";
 import MKTypography from "../MKTypography";
 import SuccessModal from "../SuccessModal/SuccessModal";
 
-// --- Variables de entorno (Vite) ---
-const EMAILJS_SERVICE_ID  = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY  = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-const RECAPTCHA_SITE_KEY  = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
-
-// (Opcional) helper para avisar si falta algo
 function assertEnv(name, value) {
   if (!value) {
-    // Podés cambiar alert por console.warn si preferís
-    console.warn(`[ENV] Falta configurar ${name} en tu .env (VITE_...)`);
+    console.warn(`[ENV] Falta configurar ${name} en tu .env`);
   }
 }
-assertEnv("VITE_EMAILJS_SERVICE_ID", EMAILJS_SERVICE_ID);
-assertEnv("VITE_EMAILJS_TEMPLATE_ID", EMAILJS_TEMPLATE_ID);
-assertEnv("VITE_EMAILJS_PUBLIC_KEY", EMAILJS_PUBLIC_KEY);
-assertEnv("VITE_RECAPTCHA_SITE_KEY", RECAPTCHA_SITE_KEY);
+
+assertEnv("REACT_APP_EMAILJS_SERVICE_ID", EMAILJS_SERVICE_ID);
+assertEnv("REACT_APP_EMAILJS_TEMPLATE_ID", EMAILJS_TEMPLATE_ID);
+assertEnv("REACT_APP_EMAILJS_PUBLIC_KEY", EMAILJS_PUBLIC_KEY);
+assertEnv("REACT_APP_RECAPTCHA_SITE_KEY", RECAPTCHA_SITE_KEY);
+
+const inputSx = {
+  "& label": {
+    color: "rgba(16,19,26,0.62)",
+  },
+
+  "& label.Mui-focused": {
+    color: "var(--color-dark)",
+  },
+
+  "& .MuiInputBase-input": {
+    color: "var(--color-dark)",
+  },
+
+  "& .MuiInput-underline:before": {
+    borderBottomColor: "rgba(16,19,26,0.22)",
+  },
+
+  "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+    borderBottomColor: "rgba(16,19,26,0.45)",
+  },
+
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "var(--color-yellow-soft)",
+  },
+
+  "& .MuiFormHelperText-root": {
+    marginLeft: 0,
+  },
+};
 
 function FormSimple() {
   const [formData, setFormData] = useState({
@@ -37,7 +64,7 @@ function FormSimple() {
     apellido: "",
     email: "",
     mensaje: "",
-    website: "", // honeypot
+    website: "",
   });
 
   const [formErrors, setFormErrors] = useState({
@@ -56,25 +83,48 @@ function FormSimple() {
   const recaptchaRef = useRef(null);
 
   const handleChecked = () => {
-    setChecked(!checked);
-    if (!checked) setFormErrors((prev) => ({ ...prev, terms: "" }));
+    setChecked((prev) => !prev);
+
+    if (!checked) {
+      setFormErrors((prev) => ({ ...prev, terms: "" }));
+    }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setFormErrors({ ...formErrors, [name]: "" });
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validateForm = () => {
-    let errors = {};
+    const errors = {};
     let isValid = true;
 
-    if (!formData.nombre) { errors.nombre = "Este campo es obligatorio."; isValid = false; }
-    if (!formData.email) { errors.email = "Este campo es obligatorio."; isValid = false; }
-    if (!formData.mensaje) { errors.mensaje = "Este campo es obligatorio."; isValid = false; }
-    if (!checked) { errors.terms = "Debes aceptar los términos y condiciones."; isValid = false; }
-    if (!recaptchaToken) { errors.recaptcha = "Por favor, completá el reCAPTCHA."; isValid = false; }
+    if (!formData.nombre) {
+      errors.nombre = "Este campo es obligatorio.";
+      isValid = false;
+    }
+
+    if (!formData.email) {
+      errors.email = "Este campo es obligatorio.";
+      isValid = false;
+    }
+
+    if (!formData.mensaje) {
+      errors.mensaje = "Este campo es obligatorio.";
+      isValid = false;
+    }
+
+    if (!checked) {
+      errors.terms = "Debes aceptar los términos y condiciones.";
+      isValid = false;
+    }
+
+    if (!recaptchaToken) {
+      errors.recaptcha = "Por favor, completá el reCAPTCHA.";
+      isValid = false;
+    }
 
     setFormErrors(errors);
     return isValid;
@@ -82,7 +132,8 @@ function FormSimple() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.website) return; // honeypot
+
+    if (formData.website) return;
     if (!validateForm()) return;
 
     try {
@@ -98,15 +149,31 @@ function FormSimple() {
           message: formData.mensaje,
           "g-recaptcha-response": recaptchaToken,
         },
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       );
 
       setOpenModal(true);
-      setFormData({ nombre: "", apellido: "", email: "", mensaje: "", website: "" });
+
+      setFormData({
+        nombre: "",
+        apellido: "",
+        email: "",
+        mensaje: "",
+        website: "",
+      });
+
       setChecked(false);
       setRecaptchaToken("");
       recaptchaRef.current?.reset();
-      setFormErrors({ nombre: "", apellido: "", email: "", mensaje: "", terms: "", recaptcha: "" });
+
+      setFormErrors({
+        nombre: "",
+        apellido: "",
+        email: "",
+        mensaje: "",
+        terms: "",
+        recaptcha: "",
+      });
     } catch (error) {
       console.error("Error al enviar el correo:", error);
       alert("Hubo un error al enviar tu mensaje. Intenta nuevamente.");
@@ -117,16 +184,93 @@ function FormSimple() {
 
   return (
     <>
-      <MKBox component="section" py={12}>
+      <MKBox
+        component="section"
+        id="contacto"
+        sx={{
+          py: { xs: 6, md: 8 },
+          backgroundColor: "var(--color-white-soft)",
+          color: "var(--color-dark)",
+        }}
+      >
         <Container>
-          <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
-            <MKTypography variant="h3" mb={1}>Contáctanos</MKTypography>
-          </Grid>
+          <MKBox
+            sx={{
+              maxWidth: "760px",
+              mx: "auto",
+              textAlign: "center",
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            <MKTypography
+              component="p"
+              sx={{
+                color: "var(--color-yellow-soft)",
+                fontSize: "0.78rem",
+                fontWeight: 800,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                mb: 1,
+              }}
+            >
+              Consultas e inscripciones
+            </MKTypography>
 
-          <Grid container item xs={12} lg={7} sx={{ mx: "auto" }}>
-            <MKBox width="100%" component="form" autoComplete="off" onSubmit={handleSubmit}>
-              <MKBox p={3}>
-                {/* Honeypot oculto */}
+            <MKTypography
+              component="h2"
+              sx={{
+                color: "var(--color-dark)",
+                fontSize: {
+                  xs: "2.4rem",
+                  sm: "3rem",
+                  md: "3.6rem",
+                },
+                fontWeight: 800,
+                letterSpacing: "-0.04em",
+                lineHeight: 1.05,
+                mb: 2,
+              }}
+            >
+              Contactanos
+            </MKTypography>
+
+            <MKTypography
+              sx={{
+                color: "rgba(16,19,26,0.68)",
+                fontSize: {
+                  xs: "1rem",
+                  md: "1.12rem",
+                },
+                lineHeight: 1.75,
+                maxWidth: "680px",
+                mx: "auto",
+              }}
+            >
+              Escribinos para consultar por clases, horarios, alquiler de salas
+              o actividades especiales.
+            </MKTypography>
+          </MKBox>
+
+          <MKBox
+            sx={{
+              width: "100%",
+              maxWidth: "900px",
+              mx: "auto",
+            }}
+          >
+            <MKBox
+              width="100%"
+              component="form"
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              sx={{
+                backgroundColor: "#fff",
+                border: "1px solid rgba(16,19,26,0.1)",
+                borderRadius: "24px",
+                boxShadow: "0 18px 45px rgba(16,19,26,0.12)",
+              }}
+            >
+              <MKBox p={{ xs: 3, md: 4 }}>
                 <input
                   type="text"
                   name="website"
@@ -148,8 +292,10 @@ function FormSimple() {
                       onChange={handleChange}
                       error={!!formErrors.nombre}
                       helperText={formErrors.nombre}
+                      sx={inputSx}
                     />
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <MKInput
                       variant="standard"
@@ -160,6 +306,7 @@ function FormSimple() {
                       onChange={handleChange}
                       error={!!formErrors.apellido}
                       helperText={formErrors.apellido}
+                      sx={inputSx}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -173,8 +320,10 @@ function FormSimple() {
                       onChange={handleChange}
                       error={!!formErrors.email}
                       helperText={formErrors.email}
+                      sx={inputSx}
                     />
                   </Grid>
+
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
@@ -187,25 +336,89 @@ function FormSimple() {
                       onChange={handleChange}
                       error={!!formErrors.mensaje}
                       helperText={formErrors.mensaje}
+                      sx={inputSx}
                     />
                   </Grid>
 
-                  {/* Checkbox términos */}
-                  <Grid item xs={12} alignItems="center" ml={-1}>
-                    <Switch checked={checked} onChange={handleChecked} />
-                    <MKTypography
-                      variant="button"
-                      fontWeight="regular"
-                      color="text"
-                      ml={-1}
-                      sx={{ cursor: "pointer", userSelect: "none" }}
-                      onClick={handleChecked}
+                  <Grid item xs={12}>
+                    <MKBox
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexWrap: "wrap",
+                        gap: "0.25rem",
+                      }}
                     >
-                      &nbsp;&nbsp;Acepto los&nbsp;
-                    </MKTypography>
-                    <MKTypography component="a" href="#" variant="button" fontWeight="regular" color="dark">
-                      Términos y Condiciones
-                    </MKTypography>
+                      <Switch
+                        checked={checked}
+                        onChange={handleChecked}
+                        sx={{
+                          "& .MuiSwitch-switchBase": {
+                            color: "rgba(16,19,26,0.42)",
+                          },
+
+                          "& .MuiSwitch-switchBase.Mui-checked": {
+                            color: "var(--color-yellow-soft)",
+                          },
+
+                          "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
+                            {
+                              backgroundColor: "var(--color-yellow-soft)",
+                              opacity: 0.65,
+                            },
+
+                          "& .MuiSwitch-track": {
+                            backgroundColor: "rgba(16,19,26,0.28)",
+                          },
+
+                          "& .MuiSwitch-switchBase.Mui-focusVisible .MuiSwitch-thumb":
+                            {
+                              color: "var(--color-yellow-soft)",
+                            },
+                        }}
+                      />
+
+                      <MKTypography
+                        variant="button"
+                        fontWeight="regular"
+                        sx={{
+                          color: "rgba(16,19,26,0.72)",
+                          cursor: "pointer",
+                          userSelect: "none",
+                        }}
+                        onClick={handleChecked}
+                      >
+                        Acepto los
+                      </MKTypography>
+
+                      <MKTypography
+                        component="a"
+                        href="#"
+                        variant="button"
+                        fontWeight="bold"
+                        sx={{
+                          color: "var(--color-dark)",
+                          textDecoration: "underline",
+                          textDecorationColor: "var(--color-yellow-soft)",
+                          textUnderlineOffset: "4px",
+
+                          "&:hover": {
+                            color: "var(--color-yellow-soft)",
+                          },
+
+                          "&:focus": {
+                            color: "var(--color-dark)",
+                          },
+
+                          "&:active": {
+                            color: "var(--color-dark)",
+                          },
+                        }}
+                      >
+                        Términos y Condiciones
+                      </MKTypography>
+                    </MKBox>
+
                     {formErrors.terms && (
                       <MKTypography variant="body2" color="error" mt={1}>
                         {formErrors.terms}
@@ -213,16 +426,29 @@ function FormSimple() {
                     )}
                   </Grid>
 
-                  {/* reCAPTCHA V2 */}
                   <Grid item xs={12}>
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={RECAPTCHA_SITE_KEY || ""}
-                      onChange={(token) => {
-                        setRecaptchaToken(token || "");
-                        if (token) setFormErrors((prev) => ({ ...prev, recaptcha: "" }));
+                    <MKBox
+                      sx={{
+                        transform: { xs: "scale(0.9)", sm: "scale(1)" },
+                        transformOrigin: "left center",
                       }}
-                    />
+                    >
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={RECAPTCHA_SITE_KEY || ""}
+                        onChange={(token) => {
+                          setRecaptchaToken(token || "");
+
+                          if (token) {
+                            setFormErrors((prev) => ({
+                              ...prev,
+                              recaptcha: "",
+                            }));
+                          }
+                        }}
+                      />
+                    </MKBox>
+
                     {formErrors.recaptcha && (
                       <MKTypography variant="body2" color="error" mt={1}>
                         {formErrors.recaptcha}
@@ -231,14 +457,60 @@ function FormSimple() {
                   </Grid>
                 </Grid>
 
-                <Grid container item justifyContent="center" xs={12} my={2}>
-                  <MKButton type="submit" variant="gradient" color="dark" fullWidth disabled={loading}>
-                    Enviar Mensaje
+                <Grid container justifyContent="center" xs={12} mt={3}>
+                  <MKButton
+                    type="submit"
+                    variant="contained"
+                    fullWidth
+                    disabled={loading}
+                    sx={{
+                      backgroundColor: "var(--color-dark) !important",
+                      color: "var(--color-white) !important",
+                      borderRadius: "var(--radius-pill)",
+                      py: 1.2,
+                      fontWeight: 800,
+                      boxShadow: "none !important",
+                      transition: "all var(--transition-fast)",
+                      textTransform: "none",
+
+                      "&:hover": {
+                        backgroundColor: "var(--color-black) !important",
+                        color: "var(--color-yellow) !important",
+                        boxShadow: "none !important",
+                      },
+
+                      "&:focus": {
+                        backgroundColor: "var(--color-dark) !important",
+                        color: "var(--color-white) !important",
+                        boxShadow: "none !important",
+                      },
+
+                      "&:active": {
+                        backgroundColor: "var(--color-dark) !important",
+                        color: "var(--color-white) !important",
+                        boxShadow: "none !important",
+                      },
+
+                      "&.Mui-focusVisible": {
+                        backgroundColor: "var(--color-dark) !important",
+                        color: "var(--color-white) !important",
+                        outline: "2px solid var(--color-yellow-soft)",
+                        outlineOffset: "3px",
+                        boxShadow: "none !important",
+                      },
+
+                      "&.Mui-disabled": {
+                        backgroundColor: "rgba(16,19,26,0.28) !important",
+                        color: "rgba(255,255,255,0.7) !important",
+                      },
+                    }}
+                  >
+                    {loading ? "Enviando..." : "Enviar mensaje"}
                   </MKButton>
                 </Grid>
               </MKBox>
             </MKBox>
-          </Grid>
+          </MKBox>
         </Container>
       </MKBox>
 

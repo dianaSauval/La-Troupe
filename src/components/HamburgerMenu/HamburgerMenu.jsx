@@ -2,120 +2,139 @@ import React from "react";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import Link from "@mui/material/Link";
 import MKTypography from "../MKTypography";
 import MKBox from "../MKBox";
-import Link from "@mui/material/Link";
 
-function HamburgerMenu({ isOpen, onClose, scrollToSection }) {
+const DEFAULT_SECTIONS = [
+  { id: "inicio", label: "Inicio" },
+  { id: "escuela", label: "Escuela" },
+  { id: "clases", label: "Clases" },
+  { id: "rental", label: "Alquiler" },
+  { id: "contacto", label: "Contacto" },
+];
+
+function HamburgerMenu({
+  id = "mobile-menu",
+  isOpen,
+  onClose,
+  scrollToSection,
+  sections = DEFAULT_SECTIONS,
+}) {
   return (
     <Drawer
+      id={id}
       anchor="right"
       open={isOpen}
       onClose={onClose}
       sx={{
+        "& .MuiBackdrop-root": {
+          backgroundColor: "rgba(0,0,0,0.45)",
+        },
         "& .MuiDrawer-paper": {
-          width: "280px",
-          backgroundColor: "#FFC523",
-          padding: "1rem",
+          width: { xs: "82vw", sm: "330px" },
+          maxWidth: "360px",
+          background:
+            "linear-gradient(145deg, #171b24 0%, #222834 50%, #10131a 100%)",
+          color: "#fff",
+          padding: "1.4rem",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          borderLeft: "1px solid rgba(255,255,255,0.12)",
+          boxShadow: "-18px 0 45px rgba(0,0,0,0.38)",
         },
       }}
     >
-      {/* Header del menú con el botón de cerrar */}
+      {/* Header */}
       <MKBox
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           width: "100%",
-          marginBottom: "1rem",
+          pb: "1rem",
+          mb: "1.5rem",
+          borderBottom: "1px solid rgba(255,255,255,0.12)",
         }}
       >
         <MKTypography
           variant="h5"
-          color="black"
-          fontWeight="bold"
           sx={{
-            fontFamily: "'Roboto Slab', serif", // Cambia esto según tu preferencia
+            color: "#fff",
+            fontWeight: 600,
+            letterSpacing: "0.03em",
           }}
         >
           Menú
         </MKTypography>
-        <IconButton onClick={onClose} sx={{ color: "black" }}>
-          <CloseIcon fontSize="large" />
+
+        <IconButton
+          onClick={onClose}
+          aria-label="Cerrar menú"
+          sx={{
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.18)",
+            backgroundColor: "rgba(255,255,255,0.04)",
+            transition: "all 0.25s ease",
+
+            "&:hover": {
+              backgroundColor: "rgba(255,239,24,0.12)",
+              color: "#FFEF18",
+              borderColor: "rgba(255,239,24,0.45)",
+            },
+          }}
+        >
+          <CloseIcon />
         </IconButton>
       </MKBox>
-      {/* Opciones del menú */}
+
+      {/* Links */}
       <MKBox
         role="presentation"
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           width: "100%",
+          gap: "0.3rem",
         }}
       >
-        <MKTypography
-          component={Link}
-          href="#inicio"
-          variant="h6"
-          color="black"
-          fontWeight="bold"
-          sx={{
-            fontSize: "1.5rem",
-            marginBottom: 2,
-            textDecoration: "none",
-            cursor: "pointer",
-            fontFamily: "'Roboto Slab', serif",
-            "&:hover": {
-              color: "#444",
-            },
-          }}
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("inicio");
-          }}
-        >
-          Inicio
-        </MKTypography>
-        {/* Línea divisora */}
-        <MKBox
-          component="hr"
-          sx={{
-            width: "80%",
-            border: "none",
-            height: "2px",
-            backgroundColor: "#444",
-            margin: "1rem 0",
-          }}
-        />
-        {["escuela", "clases", "alquiler", "contacto"].map((section) => (
+        {sections.map(({ id, label }) => (
           <MKTypography
-            key={section}
+            key={id}
             component={Link}
-            href={`#${section}`}
-            variant="p"
-            color="black"
-            fontWeight="regular"
+            href={`#${id}`}
+            underline="none"
             sx={{
-              fontSize: "1.25rem",
-              marginBottom: 2,
+              width: "100%",
+              color: "#fff",
+              fontSize: "1.08rem",
+              fontWeight: 500,
+              letterSpacing: "0.02em",
               textDecoration: "none",
               cursor: "pointer",
-              fontFamily: "'Roboto Slab', serif",
+              borderRadius: "10px",
+              px: "0.8rem",
+              py: "0.85rem",
+              transition: "all 0.22s ease",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
+
               "&:hover": {
-                color: "#444",
-                fontWeight: "bold",
+                color: "#FFEF18",
+                backgroundColor: "rgba(255,255,255,0.045)",
+                paddingLeft: "1rem",
+              },
+
+              "&:focus-visible": {
+                outline: "2px solid #FFEF18",
+                outlineOffset: "3px",
               },
             }}
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection(section);
+              scrollToSection(id);
             }}
           >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
+            {label}
           </MKTypography>
         ))}
       </MKBox>
@@ -124,4 +143,3 @@ function HamburgerMenu({ isOpen, onClose, scrollToSection }) {
 }
 
 export default HamburgerMenu;
-

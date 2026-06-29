@@ -1,0 +1,24 @@
+{
+  "name": "La Troupe",
+  "short_name": "La Troupe",
+  "description": "Escuela de circo en Banfield. Clases para infancias, adolescentes y adultos. Tela, trapecio, aro, acrobacia, rueda Cyr y mucho más.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#fff11a",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

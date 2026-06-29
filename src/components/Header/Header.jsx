@@ -8,36 +8,71 @@ import bgImage from "../../assets/images/fotobanner.jpeg";
 import MKButton from "../MKButton";
 
 function Header() {
+  const scrollToClasses = () => {
+    window.location.hash = "clases";
+    document.getElementById("clases")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <MKBox component="header" position="relative" sx={{ overflowX: "visible" }}>
+    <MKBox component="header" position="relative" sx={{ overflowX: "hidden" }}>
       <NavBar />
 
-      {/* Imagen LCP "oculta" para que Lighthouse la detecte (opcional) */}
       <img
         src={bgImage}
         alt="Clases de circo en Banfield: telas, trapecio, aro y rueda Cyr"
         style={{ position: "absolute", width: 0, height: 0, opacity: 0 }}
-        fetchpriority="high"
+        fetchPriority="high"
       />
 
       <MKBox
         id="inicio"
+        component="section"
         display="flex"
         alignItems="center"
-        minHeight="110vh"
-        sx={(theme) => ({
+        minHeight={{ xs: "100svh", md: "110vh" }}
+        sx={{
+          position: "relative",
+          isolation: "isolate",
           backgroundImage: `
             linear-gradient(
-              ${theme.functions.rgba(theme.palette.gradients.dark.main, 0.5)},
-              ${theme.functions.rgba(theme.palette.gradients.dark.state, 0.5)}
-            ), url(${bgImage})`,
+              90deg,
+              rgba(5, 7, 11, 0.94) 0%,
+              rgba(16, 19, 26, 0.86) 36%,
+              rgba(16, 19, 26, 0.46) 68%,
+              rgba(16, 19, 26, 0.18) 100%
+            ),
+            url(${bgImage})
+          `,
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          paddingTop: "55px",
-          overflow: "visible",
-        })}
+          backgroundPosition: { xs: "center", md: "center" },
+          paddingTop: { xs: "82px", md: "96px" },
+          overflow: "hidden",
+
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            zIndex: -1,
+            background:
+              "radial-gradient(circle at 18% 48%, rgba(255, 239, 24, 0.12), transparent 30%)",
+            pointerEvents: "none",
+          },
+
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: "180px",
+            zIndex: -1,
+            background:
+              "linear-gradient(180deg, transparent 0%, rgba(16,19,26,0.92) 100%)",
+            pointerEvents: "none",
+          },
+        }}
       >
-        <Container sx={{ overflow: "visible" }}>
+        <Container sx={{ position: "relative", zIndex: 1 }}>
           <Grid
             container
             item
@@ -47,73 +82,115 @@ function Header() {
             flexDirection="column"
             justifyContent="center"
             sx={{
-              overflow: "visible",
-              padding: { xs: "0 1rem", md: "0" },
+              px: { xs: 2, md: 0 },
+              textAlign: { xs: "center", md: "left" },
+              alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            {/* H1 con keyword local */}
+            <MKTypography
+              component="p"
+              sx={{
+                color: "var(--color-yellow)",
+                fontSize: { xs: "0.72rem", md: "0.82rem" },
+                fontWeight: 700,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                mb: 1.5,
+              }}
+            >
+              Multiespacio · Circo · Movimiento
+            </MKTypography>
+
             <MKTypography
               component="h1"
               variant="h1"
-              mb={2}
-              sx={(theme) => ({
-                color: "#FFC523",
+              sx={{
+                color: "#fff",
+                fontWeight: 800,
+                lineHeight: 0.95,
+                letterSpacing: "-0.045em",
+                mb: 1.5,
+                textShadow: "0 10px 32px rgba(0,0,0,0.52)",
                 fontSize: {
-                  xs: theme.typography.size["2xl"],
-                  sm: theme.typography.size["3xl"],
-                  md: theme.typography.size["4xl"],
+                  xs: "3rem",
+                  sm: "4rem",
+                  md: "4.8rem",
+                  lg: "5.2rem",
                 },
-              })}
+              }}
             >
-              La Troupe Multiespacio
+              La Troupe
+              <MKBox
+                component="span"
+                sx={{
+                  display: "block",
+                  color: "var(--color-yellow)",
+                }}
+              >
+                Multiespacio
+              </MKBox>
             </MKTypography>
+
             <MKTypography
               component="h2"
-              variant="h2"
-              mb={2}
-              sx={(theme) => ({
-                color: "#FFC523",
-                fontSize: {
-                  xs: theme.typography.size["2xl"],
-                  sm: theme.typography.size["3xl"],
-                  md: theme.typography.size["4xl"],
-                },
-              })}
-            >
-              Escuela de Circo en Banfield
-            </MKTypography>
-
-            {/* Intro indexable */}
-            <MKTypography
-              variant="body1"
-              color="white"
               sx={{
-                opacity: 0.9,
-                pr: { md: "1.5rem" },
-                mr: { md: "1.5rem" },
+                color: "rgba(255,255,255,0.88)",
+                fontSize: { xs: "1.18rem", md: "1.55rem" },
+                fontWeight: 500,
+                lineHeight: 1.35,
+                mb: 2,
               }}
             >
-              En La Troupe, creemos que el circo es más que un espectáculo, es
-              una forma de conectar, expresarse y desafiarse a uno mismo
+              Escuela de circo en Banfield
             </MKTypography>
 
-            {/* CTA accesible que baja a "clases" */}
+            <MKTypography
+              component="p"
+              sx={{
+                color: "rgba(255,255,255,0.76)",
+                fontSize: { xs: "1rem", md: "1.08rem" },
+                lineHeight: 1.8,
+                maxWidth: "560px",
+              }}
+            >
+              Un espacio para entrenar, crear y descubrir el circo como lenguaje
+              de expresión, encuentro y desafío personal.
+            </MKTypography>
+
+            <MKBox
+              sx={{
+                width: "76px",
+                height: "2px",
+                backgroundColor: "var(--color-yellow)",
+                mt: 3,
+                mb: 3,
+                borderRadius: "999px",
+              }}
+            />
+
             <MKButton
               variant="contained"
-              sx={{
-                mt: 3,
-                alignSelf: "flex-start",
-                backgroundColor: "#FFC523",
-                color: "#261A23",
-              }}
-             onClick={() => {
-  // 1) actualiza el hash (no crea una nueva URL “/clases”)
-  window.location.hash = "clases";
-  // 2) hace scroll
-  document.getElementById("clases")?.scrollIntoView({ behavior: "smooth" });
-}}
-
+              onClick={scrollToClasses}
               aria-label="Ver horarios y disciplinas de clases"
+              sx={{
+                alignSelf: { xs: "center", md: "flex-start" },
+                backgroundColor: "var(--color-yellow)",
+                color: "var(--color-black)",
+                px: 3.2,
+                py: 1.15,
+                borderRadius: "999px",
+                fontWeight: 800,
+                letterSpacing: "0.02em",
+                boxShadow: "0 14px 30px rgba(0,0,0,0.32)",
+                transition: "all 0.25s ease",
+
+                "&:hover": {
+                  backgroundColor: "#fff",
+                  color: "var(--color-black)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 18px 38px rgba(0,0,0,0.38)",
+                },
+              }}
             >
               Ver clases y horarios
             </MKButton>

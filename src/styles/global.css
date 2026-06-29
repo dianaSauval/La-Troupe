@@ -1,0 +1,67 @@
+:root {
+  --color-yellow: #ffef18;
+  --color-yellow-soft: #ffc523;
+
+  --color-black: #05070b;
+  --color-dark: #10131a;
+  --color-dark-soft: #171b24;
+  --color-slate: #242a35;
+
+  --color-white: #ffffff;
+  --color-white-soft: #f5f5f0;
+
+  --color-text: #f5f5f0;
+  --color-text-muted: rgba(255, 255, 255, 0.72);
+
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.28);
+  --radius-soft: 18px;
+  --radius-pill: 999px;
+
+  --transition-fast: 0.22s ease;
+  --transition-base: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 239, 24, 0.08), transparent 28%),
+    linear-gradient(135deg, var(--color-dark) 0%, var(--color-slate) 45%, var(--color-black) 100%);
+  color: var(--color-text);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
