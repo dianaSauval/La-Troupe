@@ -6,7 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import MKBox from "../MKBox";
 import MKTypography from "../MKTypography";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
-import logo from "../../assets/images/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const SECTIONS = [
@@ -16,6 +15,8 @@ const SECTIONS = [
   { id: "rental", label: "Alquiler" },
   { id: "contacto", label: "Contacto" },
 ];
+
+const logo = "/logo-header.webp";
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);

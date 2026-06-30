@@ -4,7 +4,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Switch from "@mui/material/Switch";
 
 import MKBox from "../MKBox";
 import MKInput from "../MKInput";
@@ -72,23 +71,13 @@ function FormSimple() {
     apellido: "",
     email: "",
     mensaje: "",
-    terms: "",
     recaptcha: "",
   });
 
-  const [checked, setChecked] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const recaptchaRef = useRef(null);
-
-  const handleChecked = () => {
-    setChecked((prev) => !prev);
-
-    if (!checked) {
-      setFormErrors((prev) => ({ ...prev, terms: "" }));
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -116,11 +105,6 @@ function FormSimple() {
       isValid = false;
     }
 
-    if (!checked) {
-      errors.terms = "Debes aceptar los términos y condiciones.";
-      isValid = false;
-    }
-
     if (!recaptchaToken) {
       errors.recaptcha = "Por favor, completá el reCAPTCHA.";
       isValid = false;
@@ -133,7 +117,9 @@ function FormSimple() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Honeypot anti-spam: si este campo oculto viene lleno, cortamos el envío.
     if (formData.website) return;
+
     if (!validateForm()) return;
 
     try {
@@ -149,7 +135,7 @@ function FormSimple() {
           message: formData.mensaje,
           "g-recaptcha-response": recaptchaToken,
         },
-        EMAILJS_PUBLIC_KEY,
+        EMAILJS_PUBLIC_KEY
       );
 
       setOpenModal(true);
@@ -162,7 +148,6 @@ function FormSimple() {
         website: "",
       });
 
-      setChecked(false);
       setRecaptchaToken("");
       recaptchaRef.current?.reset();
 
@@ -171,7 +156,6 @@ function FormSimple() {
         apellido: "",
         email: "",
         mensaje: "",
-        terms: "",
         recaptcha: "",
       });
     } catch (error) {
@@ -309,6 +293,7 @@ function FormSimple() {
                       sx={inputSx}
                     />
                   </Grid>
+
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
@@ -343,92 +328,6 @@ function FormSimple() {
                   <Grid item xs={12}>
                     <MKBox
                       sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexWrap: "wrap",
-                        gap: "0.25rem",
-                      }}
-                    >
-                      <Switch
-                        checked={checked}
-                        onChange={handleChecked}
-                        sx={{
-                          "& .MuiSwitch-switchBase": {
-                            color: "rgba(16,19,26,0.42)",
-                          },
-
-                          "& .MuiSwitch-switchBase.Mui-checked": {
-                            color: "var(--color-yellow-soft)",
-                          },
-
-                          "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
-                            {
-                              backgroundColor: "var(--color-yellow-soft)",
-                              opacity: 0.65,
-                            },
-
-                          "& .MuiSwitch-track": {
-                            backgroundColor: "rgba(16,19,26,0.28)",
-                          },
-
-                          "& .MuiSwitch-switchBase.Mui-focusVisible .MuiSwitch-thumb":
-                            {
-                              color: "var(--color-yellow-soft)",
-                            },
-                        }}
-                      />
-
-                      <MKTypography
-                        variant="button"
-                        fontWeight="regular"
-                        sx={{
-                          color: "rgba(16,19,26,0.72)",
-                          cursor: "pointer",
-                          userSelect: "none",
-                        }}
-                        onClick={handleChecked}
-                      >
-                        Acepto los
-                      </MKTypography>
-
-                      <MKTypography
-                        component="a"
-                        href="#"
-                        variant="button"
-                        fontWeight="bold"
-                        sx={{
-                          color: "var(--color-dark)",
-                          textDecoration: "underline",
-                          textDecorationColor: "var(--color-yellow-soft)",
-                          textUnderlineOffset: "4px",
-
-                          "&:hover": {
-                            color: "var(--color-yellow-soft)",
-                          },
-
-                          "&:focus": {
-                            color: "var(--color-dark)",
-                          },
-
-                          "&:active": {
-                            color: "var(--color-dark)",
-                          },
-                        }}
-                      >
-                        Términos y Condiciones
-                      </MKTypography>
-                    </MKBox>
-
-                    {formErrors.terms && (
-                      <MKTypography variant="body2" color="error" mt={1}>
-                        {formErrors.terms}
-                      </MKTypography>
-                    )}
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <MKBox
-                      sx={{
                         transform: { xs: "scale(0.9)", sm: "scale(1)" },
                         transformOrigin: "left center",
                       }}
@@ -457,7 +356,7 @@ function FormSimple() {
                   </Grid>
                 </Grid>
 
-                <Grid container justifyContent="center" xs={12} mt={3}>
+                <Grid container justifyContent="center" mt={3}>
                   <MKButton
                     type="submit"
                     variant="contained"
